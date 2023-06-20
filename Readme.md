@@ -11,11 +11,11 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
 
 ## Projects
 
-- **Project 1**: [Travel](project1/)
+- **Project 1**: [Travel](Assignment5/)
   - Description: Simple HTML website for travel agency's fees and benefits.
   - Technologies HTML CSS
 
-- **Project 2**: [Draming](project2/)
+- **Project 2**: [Draming](Assignment6/)
   - Description: HTML Website about dreams.
   - Technologies HTML CSS
 
