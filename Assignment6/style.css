@@ -1,0 +1,258 @@
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #46485d;
+}
+
+/* Navigation */
+
+nav {
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+.navTitle {
+  color: #fff;
+  font-size: 22px;
+  font-family: 'Pacifico';
+  text-transform: uppercase;
+}
+
+.navList > ul > li {
+  color: #fff;
+  font-size: 28px;
+  font-family: 'Road Rage';
+  display: inline;
+  margin-right: 40px;
+}
+
+.navList > ul > li > .navBtn {
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Roboto Mono';
+  background-color: #7e759f;
+  width: 80px;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+}
+
+/* First and Second Image Slide Sections */
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.dream1,
+.dream2 {
+  width: 100%;
+}
+
+.overlayText {
+  color: #fff;
+  font-size: 20px;
+  font-family: 'Roboto Mono';
+  line-height: 40px;
+}
+
+/* First Slide Details */
+
+.firstOverlay {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+}
+
+.firstOverlay > .overlayBtn {
+  margin-top: 50px;
+}
+
+.overlayBtn > .exploreBtn {
+  color: #fff;
+  background-color: #5772ff;
+  font-size: 16px;
+  width: 130px;
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  margin-right: 30px;
+}
+
+.overlayBtn > .productBtn {
+  color: #fff;
+  background-color: transparent;
+  font-size: 16px;
+  width: 130px;
+  padding: 8px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+}
+
+/* Second Slide Details */
+
+.secondOverlay {
+  position: absolute;
+  top: 60%;
+  left: 5%;
+}
+
+/* Dream Definition Section */
+
+.dreamDefSection {
+  min-height: 450px;
+  padding: 20px;
+  color: #fff;
+}
+
+.dreamTitle {
+  font-size: 40px;
+  font-family: 'Road Rage';
+  margin: auto;
+  text-align: center;
+}
+
+.dreamDesc {
+  font-size: 20px;
+  font-family: 'Roboto Mono';
+  opacity: 0.6;
+  margin-top: 40px;
+  padding: 0 16%;
+  text-align: center;
+  line-height: 32px;
+}
+
+.dreamImgs {
+  margin-top: 40px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.dreamImgs > div {
+  text-align: center;
+}
+.dreamImgs > div > img {
+  width: 70px;
+}
+
+.dreamImgs > div > p {
+  text-align: center;
+  font-family: 'Roboto Mono';
+}
+
+.daydream > p {
+  margin-top: 10px;
+}
+
+.nightmare > p {
+  margin-top: 10px;
+}
+
+.healing > p {
+  margin-top: 10px;
+}
+
+/* Products Section */
+
+.productsContainer {
+  color: #fff;
+}
+
+.productsTitle {
+  font-size: 45px;
+  font-family: 'Road Rage';
+  text-align: center;
+  margin-top: 30px;
+}
+
+.products {
+  position: relative;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.productsTable {
+  max-width: 100%;
+  padding: 20px;
+  margin-left: 15px;
+}
+
+.productImg {
+  width: 90%;
+  height: auto;
+}
+
+#firstImg,
+#secondImg,
+#thirdImg {
+  margin-bottom: 20%;
+}
+
+#fourthImg,
+#fifthImg,
+#sixthImg {
+  margin-bottom: 20px;
+}
+
+.allProducts {
+  position: absolute;
+  bottom: 0;
+  margin-top: 40px;
+  margin-left: 75%;
+  font-size: 22px;
+  font-family: 'Road Rage';
+}
+
+/* Footer Section */
+
+footer {
+  margin-top: 40px;
+  background-color: #53567b;
+}
+
+.footerSection {
+  padding: 20px;
+  color: #fff;
+}
+
+.footerTitle {
+  font-size: 24px;
+  font-family: 'Pacifico';
+  text-transform: uppercase;
+  margin: auto;
+  text-align: center;
+}
+
+.footerDesc {
+  font-size: 22px;
+  font-family: 'Roboto Mono';
+  opacity: 0.6;
+  margin-top: 30px;
+  padding: 0 15%;
+  text-align: center;
+  line-height: 30px;
+}
+
+.footerImgs {
+  margin-top: 30px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footerImgs > #facebook {
+  margin-right: 70px;
+}
+
+.footerImgs > #twitter {
+  margin-right: 70px;
+}
