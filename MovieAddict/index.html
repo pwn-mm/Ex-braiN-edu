@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Movie Addict</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Narrow:wght@700&family=Plus+Jakarta+Sans:wght@200;300;400&family=Racing+Sans+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Icon -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </head>
+  <body>
+    <!-- Menu Bar -->
+    <div class="menu-bar">
+      <div class="menuTitle">Movie Addict</div>
+      <div class="menuList">
+        <ul>
+          <li class="premium">
+            <img src="./assets/icon/Premium icon.png" alt="premium" />
+            <span>Go Premium</span>
+          </li>
+          <li class="active">Home</li>
+          <li>Movies</li>
+          <li>Series</li>
+          <li>Watchlists</li>
+          <li>
+            <button class="menuBtn">Login</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- End of Menu Bar  -->
+
+    <!-- Hero Section -->
+    <div class="hero-container">
+      <img src="./assets/Big Poster.jpg" alt="Hero Poster" />
+      <div class="overlayItems">
+        <h1 class="overlayText">Ant-Man and the Wasp: Quantumania</h1>
+        <div class="overlayBtn">
+          <p class="hero-rating">
+            <img src="./assets/icon/Star.png" alt="star" />
+            <span class="rating">6.6</span>
+          </p>
+          <button class="watch-now">
+            <img src="./assets/icon/watch now icon.png" alt="watch-now" />
+            Watch Now
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End of Hero Section -->
+
+    <!-- Feature Movies -->
+    <div class="moviesContainer">
+      <h1 class="containerTitle">
+        Features Movies
+        <hr />
+      </h1>
+      <div class="movies">
+        <table class="moviesTable">
+          <tr>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="firstImg"
+                  class="moviePoster"
+                  src="./assets/Movie/Movie 1.png"
+                  alt="The Menu"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>7.2</span>
+                  </p>
+                  <img
+                    class="premiumIcon"
+                    src="./assets/icon/Premium icon.png"
+                    alt="Premium"
+                  />
+                </div>
+                <p class="movieName">The Menu</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="secondImg"
+                  class="moviePoster"
+                  src="./assets/Movie/Movie 2.png"
+                  alt="Babylon"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>7.3</span>
+                  </p>
+                  <img
+                    class="premiumIcon"
+                    src="./assets/icon/Premium icon.png"
+                    alt="Premium"
+                  />
+                </div>
+                <p class="movieName">Babylon</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="thirdImg"
+                  class="moviePoster"
+                  src="./assets/Movie/Movie 3.png"
+                  alt="Bullet Train"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>7.3</span>
+                  </p>
+                </div>
+                <p class="movieName">Bullet Train</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="fourthImg"
+                  class="moviePoster"
+                  src="./assets/Movie/Movie 4.png"
+                  alt="Avatar"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>7.3</span>
+                  </p>
+                </div>
+                <p class="movieName">Avatar 2</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="see-more">
+          <p>See More &#62;</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Feature Movies -->
+
+    <!-- Quotes Section -->
+    <div class="quoteSection">
+      <div>
+        <h1 class="quoteTitle">
+          <hr />
+          Quotes Of The Day
+        </h1>
+      </div>
+      <div class="quote-container">
+        <img class="quote" src="./assets/Quotes bg.jpg" alt="Image" />
+        <div class="quoteOverlay">
+          <p class="quoteDesc">
+            "Hope is a good thing, <br />
+            maybe the best of things, <br />
+            and no good thing ever dies."
+          </p>
+          <p class="quoteMovie">- Shawshank Redemption</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Quotes Section -->
+
+    <!-- Feature Series -->
+    <div class="moviesContainer">
+      <h1 class="containerTitle">
+        Features Series
+        <hr />
+      </h1>
+      <div class="movies">
+        <table class="moviesTable">
+          <tr>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="firstImg"
+                  class="moviePoster"
+                  src="./assets/Series/Series 1.jpg"
+                  alt="The Last Of Us"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>9.2</span>
+                  </p>
+                  <img
+                    class="premiumIcon"
+                    src="./assets/icon/Premium icon.png"
+                    alt="Premium"
+                  />
+                </div>
+                <p class="movieName">The Last Of Us</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="secondImg"
+                  class="moviePoster"
+                  src="./assets/Series/Series 2.jpg"
+                  alt="TLVM"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>8.4</span>
+                  </p>
+                  <img
+                    class="premiumIcon"
+                    src="./assets/icon/Premium icon.png"
+                    alt="Premium"
+                  />
+                </div>
+                <p class="movieName">TLVM</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="thirdImg"
+                  class="moviePoster"
+                  src="./assets/Series/Series 3.jpg"
+                  alt="The Office"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>9.0</span>
+                  </p>
+                </div>
+                <p class="movieName">The Office</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+            <td>
+              <div class="movieWrapper">
+                <img
+                  id="fourthImg"
+                  class="moviePoster"
+                  src="./assets/Series/Series 4.png"
+                  alt="The Boys"
+                />
+                <div class="movieRating">
+                  <p>
+                    <span
+                      ><img
+                        class="ratingIcon"
+                        src="./assets/icon/Star.png"
+                        alt="Star"
+                    /></span>
+                    <span>8.7</span>
+                  </p>
+                </div>
+                <p class="movieName">The Boys</p>
+                <button class="watchList">
+                  <span class="plus">+</span>
+                  <span class="text">Watchlist</span>
+                </button>
+              </div>
+            </td>
+          </tr>
+        </table>
+        <div class="see-more">
+          <p>See More &#62;</p>
+        </div>
+      </div>
+    </div>
+    <!-- End of Feature Series -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="footerWrapper">
+        <!-- Navigation -->
+        <div class="navigation">
+          <p>Navigation</p>
+          <ul>
+            <li class="active">Home</li>
+            <li>Movies</li>
+            <li>Series</li>
+            <li>Watchlists</li>
+          </ul>
+        </div>
+        <!-- Description -->
+        <div class="footerDesc">
+          <div class="descWrapper">
+            <h1>Movie Addict</h1>
+            <p>
+              "Movies touch our hearts and awaken <br />
+              our vision, and change the way we see <br />
+              things."
+            </p>
+          </div>
+        </div>
+        <div class="social">
+          <div class="socialWrapper">
+            <p>Our Social</p>
+            <div class="socialIcons">
+              <span>
+                <img
+                  id="tt"
+                  src="./assets/icon/Twitter.png"
+                  alt="Twitter"
+                /> </span
+              ><span>
+                <img
+                  id="yt"
+                  src="./assets/icon/youtube.png"
+                  alt="Youtube"
+                /> </span
+              ><span>
+                <img id="fb" src="./assets/icon/Facebook.png" alt="Facebook" />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- End of Footer -->
+  </body>
+</html>

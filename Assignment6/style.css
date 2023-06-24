@@ -186,6 +186,10 @@ nav {
   margin-left: 15px;
 }
 
+td {
+  border: 1px solid cyan;
+}
+
 .productImg {
   width: 90%;
   height: auto;
@@ -207,7 +211,7 @@ nav {
   position: absolute;
   bottom: 0;
   margin-top: 40px;
-  margin-left: 75%;
+  margin-left: 85%;
   font-size: 22px;
   font-family: 'Road Rage';
 }
