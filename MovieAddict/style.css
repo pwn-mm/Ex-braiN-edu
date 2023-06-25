@@ -30,7 +30,7 @@ body {
 .menuList ul li {
   color: #fff;
   display: inline-block;
-  font-size: 28px;
+  font-size: 22px;
   font-family: 'PT Sans Narrow', sans-serif;
   margin-right: 25px;
 }
@@ -58,10 +58,11 @@ body {
 .menuList li .menuBtn {
   color: #fff;
   background-color: #c10f0f;
-  font-size: 16px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 20px;
   border: none;
   width: 120px;
-  padding: 8px;
+  padding: 5px;
   border-radius: 10px;
 }
 
@@ -120,17 +121,15 @@ hr {
   color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   background-color: #c10f0f;
-  width: 180px;
-  padding: 10px;
+  width: 150px;
   border: none;
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
+  font-size: 18px;
+  border-radius: 10px;
 }
 
 .watch-now img {
-  width: 20px;
-  margin-right: 10px;
+  width: 22px;
+  margin-right: 5px;
 }
 
 /* Feature Movies Section */
@@ -280,18 +279,19 @@ td {
   float: right;
   margin: 20px 30px 0 0;
   font-size: 22px;
+  font-weight: bolder;
 }
 
 /* Footer */
 footer {
   background-color: #151515;
   color: #fff;
-  min-height: 200px;
+  margin-top: 5%;
+  padding: 0 20px 20px 20px;
 }
 
 .footerWrapper {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
 
@@ -338,7 +338,6 @@ footer {
   color: #fff;
   font-family: 'Plus Jakarta Sans', sans-serif;
   margin-top: 20px;
-  line-height: 20px;
 }
 
 /* Footer Social */
@@ -359,7 +358,7 @@ footer {
 }
 
 .socialIcons {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .socialIcons span img {
