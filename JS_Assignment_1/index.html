@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JavaScript Assignment 1</title>
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    First Number <input id="firstNumber" type="number" min="0" max="999999" />
+    Operator
+    <select id="arithmetic">
+      <option value="add">+</option>
+      <option value="substract">-</option>
+      <option value="multiple">*</option>
+      <option value="divide">/</option>
+    </select>
+    Second Number <input id="secondNumber" type="number" min="0" max="999999" />
+    <br />
+    <br />
+    <button onclick="calculate()">Calculate</button>
+    <br />
+    <p id="answer"></p>
+
+    Multiple First Number
+    <input id="base" type="number" min="0" max="999999" />
+    Times
+    <input id="exponent" type="number" min="0" max="999999" />
+    <button onclick="show()">Show</button>
+
+    <p id="multiAnswer"></p>
+  </body>
+</html>
