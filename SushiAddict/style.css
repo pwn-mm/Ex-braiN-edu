@@ -1,0 +1,518 @@
+/* CSS imports */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #fff0de;
+}
+
+/* ? Header Section */
+
+.header__nav {
+  padding: 40px 20px 40px 40px;
+  background-color: #b1454a;
+}
+
+.header__logo {
+  float: left;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  color: #fff0de;
+  opacity: 0.8;
+  word-spacing: 10px;
+  margin-top: -8px;
+}
+
+.header__menu {
+  text-align: right;
+}
+
+.header__menu ul li {
+  display: inline;
+  margin: -10px 0px 0 30px;
+  padding: 10px;
+  color: #fff0de;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.header__menu ul li .headerBtn {
+  color: #fff0de;
+  background: transparent;
+  outline: none;
+  border: none;
+}
+
+/* ? End Header Section */
+
+/* ? Hero Section */
+
+.hero {
+  background: no-repeat #fff0de url('./assets/about_bg2.png') right/contain;
+}
+
+.hero__content {
+  text-align: center;
+}
+
+.hero__content-info {
+  padding: 50px;
+}
+
+.hero__content-info h1 {
+  font-size: 60px;
+  font-weight: 600;
+  font-family: 'Playfair Display', serif;
+}
+
+.hero__content-info p {
+  color: #121212;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  margin: 50px 0 0 32px;
+  padding: 35px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 35px;
+  word-spacing: 5px;
+}
+
+.hero__content-buttons {
+  margin: 40px 0 40px 0;
+  padding: 10px;
+}
+
+.exploreBtn {
+  outline: none;
+  border: none;
+  font-size: 24px;
+  padding: 20px 28px;
+  background-color: #121212;
+  color: #fff0de;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  border-radius: 36px;
+}
+
+.exploreBtn img {
+  display: inline;
+  width: 24px;
+  height: 24px;
+  margin-left: 12px;
+  vertical-align: middle;
+  font-weight: 800;
+}
+
+/* ? End Hero Section */
+
+/* ? Popular Foods Hr */
+
+hr {
+  float: right;
+  width: 800px;
+  border-top: 1px solid #fff0de;
+  margin-top: 27px;
+}
+
+/* ? Popular Foods Section */
+
+.popular__foods {
+  min-height: 500px;
+  padding: 64px;
+  background: no-repeat #b1454a url('./assets/popular_bg.png');
+  background-size: contain;
+  overflow: hidden;
+}
+
+.popular__foods-title {
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #fff0de;
+}
+
+.popular__foods-items {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.popular__foods-card {
+  min-width: 260px;
+  margin: 10px;
+  padding: 38px;
+  display: inline-block;
+  vertical-align: top;
+
+  border-radius: 36px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.popular__foods-card img {
+  width: 110px;
+  height: 84px;
+}
+
+.popular__foods-card-title {
+  margin-top: 47px;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 2rem;
+  font-family: 'Playfair Display', serif;
+  color: #fff0de;
+  text-align: center;
+}
+
+.popular__foods-card-content {
+  width: 100%;
+  margin-top: 35px;
+}
+
+.popular__foods-rating {
+  float: left;
+}
+
+.popular__foods-rating img {
+  float: left;
+  width: 24px;
+  height: 24px;
+}
+
+.popular__foods-rating p {
+  margin-left: 10px;
+  float: right;
+}
+
+.popular__foods-rating p,
+.popular__foods-price {
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff0de;
+}
+
+.popular__foods-price {
+  float: right;
+}
+
+.popular__foods-btn {
+  padding: 20px 30px;
+  margin: 80px auto 0;
+
+  font-weight: 500;
+  font-size: 22px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #b1454a;
+
+  border: none;
+  outline: none;
+  background: #fff0de;
+  border-radius: 64px;
+}
+
+.popular__foods-btn img {
+  display: inline;
+  width: 26px;
+  height: 26px;
+  margin-left: 12px;
+  vertical-align: middle;
+  font-weight: 800;
+}
+
+/* ? End Popular Foods Section */
+
+/* ? Quote Sushi */
+
+.quote {
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+  background: no-repeat #fff0de url('./assets/about_bg1.png');
+  background-size: cover;
+}
+
+.quote img {
+  width: 50%;
+  height: 40%;
+  opacity: 0.7;
+}
+
+.quote__title {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  margin-left: 30%;
+}
+
+.quote__title h1 {
+  color: #b1454a;
+  font-size: 46px;
+  font-family: 'Playfair Display', serif;
+  word-spacing: 8px;
+}
+
+/* ? End Quote Section */
+
+/* ? Trending Foods Section */
+
+.trending__foods {
+  padding: 64px 64px 0 64px;
+  background: no-repeat #b1454a url('./assets/subscribe_bg.png');
+  background-size: contain;
+  overflow: hidden;
+}
+
+.trending__foods-title {
+  text-align: right;
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #fff0de;
+}
+
+/* ? Trending Foods Hr */
+
+.trending__foods-title hr {
+  float: left;
+  width: 800px;
+  border-top: 1px solid #fff0de;
+  margin-top: 27px;
+}
+
+/* ? Trending Foods Card */
+
+.trending__foods-card {
+  min-height: 300px;
+  max-width: 50%;
+  text-align: center;
+  padding: 20px;
+  margin: 40px 20px 20px 20px;
+}
+
+.trending__foods-card img {
+  float: left;
+  width: 254px;
+  height: 260px;
+}
+
+.trending__foods-card-title {
+  font-weight: 600;
+  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  color: #fff0de;
+  text-align: right;
+  margin-top: 3%;
+}
+
+.trending__foods-card .trending__list {
+  float: right;
+  list-style: none;
+}
+
+.trending__list li {
+  margin: 20px auto 20px;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.trending__foods-list p,
+.trending__drinks-list p {
+  font-size: 22px;
+  font-weight: 300;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff0de;
+}
+
+/* ? Trending Drinks Card */
+
+.trending__drinks-card {
+  float: right;
+  min-height: 300px;
+  width: 50%;
+  padding: 20px;
+  margin: 40px;
+}
+
+.trending__drinks-card img {
+  float: right;
+  width: 254px;
+  height: 260px;
+}
+
+.trending__drinks-card-title {
+  margin-top: 3%;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: 'Playfair Display', serif;
+  color: #fff0de;
+  text-align: left;
+}
+
+.trending__drinks-card .trending__list {
+  float: left;
+  list-style: none;
+  margin-left: 30px;
+}
+
+.trending__list li {
+  margin: 20px auto 20px;
+  padding: 10px 0;
+}
+
+/* ? End Trending Foods Section */
+
+/* ? Chefs Section */
+
+.chef {
+  min-height: 500px;
+  padding: 64px;
+  overflow: hidden;
+}
+
+.chef-title {
+  text-align: center;
+  font-size: 46px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  color: #b1454a;
+}
+
+.chef-items {
+  margin-top: 60px;
+  text-align: center;
+}
+
+.chef-card {
+  margin: 0px 20px 50px 23px;
+  padding: 38px;
+  display: inline-block;
+
+  border-radius: 50px;
+  background-color: rgba(177, 69, 74, 0.9);
+  border: 1px solid #b1454a;
+}
+
+.chef-card img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.chef-card-title {
+  margin-top: 10px;
+  font-weight: 600;
+  font-size: 24px;
+  font-family: 'Playfair Display', serif;
+  color: #fff0de;
+  text-align: center;
+  word-spacing: 5px;
+}
+
+.chef-contact {
+  margin-top: 10px;
+}
+
+.chef-card .chef-twitter {
+  background-color: #1da1f2;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.chef-card .chef-instagram {
+  background-color: #4267b2;
+  margin: 0 0 0 10px;
+  padding: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.chef-card-content {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.chef__bio ul {
+  list-style: none;
+  text-align: left;
+  padding: 10px;
+}
+
+.chef__bio ul li {
+  text-indent: 5px;
+  font-size: 20px;
+  font-weight: 300;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #fff0de;
+  line-height: 35px;
+  margin: 10px 0 0 0;
+}
+
+.chef-voice {
+  margin-top: 30px;
+}
+
+.chef-voice-text {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chef-voice p {
+  margin-left: 20px;
+  font-weight: 600;
+  font-size: 32px;
+  font-family: 'Plus Jakarta Sans', serif;
+  color: #b1454a;
+}
+
+/* ? End Chefs Section */
+
+/* ? Footer */
+
+footer {
+  margin: 0;
+  color: #fff0de;
+  background: #b1454a url('./assets/subscribe_bg.png') center/contain;
+  padding: 50px;
+}
+
+.footer__title {
+  float: left;
+  color: #fff0de;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-family: 'Playfair Display', serif;
+  margin-top: -18px;
+  opacity: 0.8;
+}
+
+.footer__title span {
+  color: #121212;
+}
+
+.footer__social {
+  float: right;
+  list-style: none;
+  margin-top: -20px;
+}
+
+.footer__social li {
+  display: inline;
+  margin: 0 23px 0 0;
+}
+
+.footer__social li img {
+  width: 35px;
+  height: 35px;
+}
+
+/* ? End Footer */
+
+/* * End CSS */
