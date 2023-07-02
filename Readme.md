@@ -6,18 +6,25 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
 
 - [Assignment Projects](#assignment-projects)
   - [Table of Contents](#table-of-contents)
-  - [Projects](#projects)
+  - [HTML CSS Projects](#html-css-projects)
+  - [JavaScript Assignments](#javascript-assignments)
+  - [JavaScript Projects](#javascript-projects)
   - [Getting Started](#getting-started)
 
-## Projects
+## HTML CSS Projects
 
-- **Project 1**: [Travel](Assignment5/)
-  - Description: Simple HTML website for travel agency's fees and benefits.
-  - Technologies HTML CSS
+- **Basic Html Css**: [Html_Css](Html_Css/)
+  - Technologies : HTML CSS
 
-- **Project 2**: [Draming](Assignment6/)
-  - Description: HTML Website about dreams.
-  - Technologies HTML CSS
+## JavaScript Assignments
+
+- **Basic JS Assignments**: [Basic_JS](JS_Assignments/)
+  - Technologies : JS
+
+## JavaScript Projects
+
+- **Basic JS Projects**: [Basic_JS](JS_Projects/)
+  - Technologies : JS
 
 
 ## Getting Started
