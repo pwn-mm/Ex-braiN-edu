@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game 2 | Shuffle Numbers</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="gameHeader">
+      <div class="gameScore">Score : <span id="score"></span></div>
+      <div class="start">
+        <button
+          id="startBtn"
+          class="startGameBtn activeStart"
+          onclick="gameStart()"
+        >
+          Start
+        </button>
+      </div>
+      <div class="gameTimes">Time : <span id="time"></span></div>
+    </div>
+    <!-- End of Header -->
+
+    <!-- Game Question -->
+    <div class="gameContainer">
+      <div class="gameQuestion">
+        <p id="question" class="question"></p>
+      </div>
+      <!-- End of Game Question -->
+
+      <!-- Answer Buttons -->
+      <button
+        id="btnOne"
+        class="firstBtn inactiveAnswerButton"
+        disabled
+        onclick="checkAnswer(1)"
+      ></button>
+      <button
+        id="btnTwo"
+        class="secondBtn inactiveAnswerButton"
+        disabled
+        onclick="checkAnswer(2)"
+      ></button>
+      <button
+        id="btnThree"
+        class="thirdBtn inactiveAnswerButton"
+        disabled
+        onclick="checkAnswer(3)"
+      ></button>
+    </div>
+
+    <!-- Stop Button -->
+    <div class="stop">
+      <button
+        id="stopBtn"
+        class="stopGameBtn inactiveStop"
+        disabled
+        onclick="gameStop()"
+      >
+        Stop
+      </button>
+    </div>
+
+    <!-- History and Result -->
+    <div class="footer">
+      <h2 class="history">History</h2>
+      <ol id="list" class="historyList"></ol>
+    </div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

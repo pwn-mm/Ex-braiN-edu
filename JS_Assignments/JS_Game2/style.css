@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+/* Header */
+.gameHeader {
+  position: relative;
+  margin-top: 50px;
+}
+
+.gameScore {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 22px;
+}
+
+.start,
+.stop {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+}
+
+.start .startGameBtn {
+  width: 200px;
+  padding: 5px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.gameTimes {
+  position: absolute;
+  top: 10%;
+  right: 14%;
+  font-size: 22px;
+}
+
+/* Game Body */
+.gameContainer {
+  text-align: center;
+}
+
+/* Game Question */
+.question {
+  font-size: 20px;
+  margin-top: 40px;
+}
+
+/* Answer Buttons */
+.firstBtn,
+.secondBtn,
+.thirdBtn {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+/* Stop Button */
+.stop .stopGameBtn {
+  width: 300px;
+  padding: 7px;
+  font-size: 16px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/* History and Results */
+.footer {
+  margin: 50px 0 0 50px;
+  padding: 20px;
+}
+
+.historyList {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+/* ? Custom CSS */
+
+.activeStart {
+  background-color: lightgreen;
+  color: #000;
+}
+
+.activeStop {
+  background-color: red;
+  color: #fff;
+}
+
+.inactiveStart,
+.inactiveStop,
+.inactiveAnswerButton {
+  background-color: ghostwhite;
+  color: #000;
+}
+
+.activeAnswerButton {
+  background-color: lightskyblue;
+  color: #000;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Game 2</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <!-- Start Header -->
+    <div class="header">
+      <div class="score">Score : <span id="score"></span></div>
+      <div class="start">
+        <button
+          id="btnStart"
+          class="btnHeader activeStart"
+          onclick="startGame()"
+        >
+          Start
+        </button>
+      </div>
+      <div class="time">Time : <span id="time"></span></div>
+    </div>
+    <!-- End Header -->
+    <!-- Start Body -->
+    <div class="body">
+      <p class="bodyTitle">Which number is the bigger one?</p>
+      <button
+        id="leftBtn"
+        class="btn1"
+        disabled
+        onclick="checkButtons(1)"
+      ></button>
+      <button
+        id="rightBtn"
+        class="btn2"
+        disabled
+        onclick="checkButtons(2)"
+      ></button>
+
+      <div class="stop">
+        <button id="btnStop" class="btnFooter" disabled onclick="gameStop()">
+          Stop
+        </button>
+      </div>
+    </div>
+    <!-- End Body -->
+
+    <!-- Start Footer -->
+    <div class="footer">
+      <h2 class="history">History</h2>
+      <ol id="list"></ol>
+    </div>
+    <!-- End Footer -->
+  </body>
+</html>

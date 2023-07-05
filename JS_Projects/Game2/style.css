@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* * Header */
+
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+
+.score,
+.time {
+  font-size: 22px;
+}
+
+.btnHeader {
+  width: 150px;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: greenyellow;
+}
+
+/* * Body */
+.body {
+  text-align: center;
+}
+
+.bodyTitle {
+  margin: 40px 0;
+  font-size: 22px;
+}
+
+.btn1,
+.btn2 {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+/* * Footer */
+.btnFooter {
+  width: 150px;
+  padding: 8px;
+  margin-top: 40px;
+  font-size: 18px;
+  border-radius: 20px;
+  background-color: grey;
+  color: #fff;
+}
+
+.footer {
+  padding-left: 40px;
+}
+
+/* ? Custom CSS */
+
+.inactiveStart,
+.inactiveStop,
+.inactiveLeftBtn,
+.inactiveRightBtn {
+  background-color: grey;
+  color: #fff;
+}
+
+.activeStop {
+  background-color: red;
+  color: #fff;
+}
+
+.activeBtn {
+  background-color: deepskyblue;
+  color: #000;
+}
