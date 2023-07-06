@@ -38,14 +38,20 @@
 }
 
 /* Game Body */
-.gameContainer {
+.gameContainer,
+#operatorSelection {
   text-align: center;
+}
+
+/* Choose Operator */
+#operatorSelection {
+  margin-top: 30px;
 }
 
 /* Game Question */
 .question {
   font-size: 20px;
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 /* Answer Buttons */

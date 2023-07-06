@@ -22,6 +22,16 @@
     <!-- End of Header -->
 
     <!-- Game Question -->
+
+    <div id="operatorSelection">
+      <select id="operator" hidden onchange="quizzz()">
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Multiplication (×)</option>
+        <option value="/">Division (÷)</option>
+      </select>
+    </div>
+
     <div class="gameContainer">
       <div class="gameQuestion">
         <p id="question" class="question"></p>
@@ -67,6 +77,6 @@
       <ol id="list" class="historyList"></ol>
     </div>
 
-    <script src="/script.js"></script>
+    <script src="./script.js"></script>
   </body>
 </html>

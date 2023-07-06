@@ -1,5 +1,5 @@
 /**
- * Global DOM variables
+ * Declare Global DOM variables
  */
 var score = document.getElementById('score');
 var time = document.getElementById('time');
@@ -7,12 +7,21 @@ var time = document.getElementById('time');
 var startBtn = document.getElementById('startBtn');
 var stopBtn = document.getElementById('stopBtn');
 
+var operatorSelect = document.getElementById('operator');
 var question = document.getElementById('question');
 var answer = 0;
 
 var AnsBtn1 = document.getElementById('btnOne');
 var AnsBtn2 = document.getElementById('btnTwo');
 var AnsBtn3 = document.getElementById('btnThree');
+
+/**
+ * Global Random Generator Function
+ */
+
+function generateRandomNumbers() {
+  return Math.floor(Math.random() * 101);
+}
 
 /**
  * GameStart Function
@@ -23,6 +32,8 @@ function gameStart() {
 
   stopBtn.setAttribute('class', 'stopGameBtn activeStop');
   stopBtn.disabled = false;
+
+  operatorSelect.hidden = false;
 
   AnsBtn1.setAttribute('class', 'firstBtn activeAnswerButton');
   AnsBtn1.disabled = false;
@@ -38,30 +49,47 @@ function gameStart() {
 
 /**
  * Main Logic Section of this game
- * Quiz
+ *
+ * First, generate 2 random numbers for the question
+ * Second, generate a radom number between 1 to 3, to shuffle buttons
+ * Third, get the value of selectedOption
+ * Fouth, depends on the selected value, each question is different
+ * Finally, depends on random number for the button, shuffle the answers between 3 buttons
  */
 function quizzz() {
-  var rd1 = Math.floor(Math.random() * 101);
-  var rd2 = Math.floor(Math.random() * 101);
+  var rd1 = generateRandomNumbers();
+  var rd2 = generateRandomNumbers();
 
-  var rd3 = Math.floor(Math.random() * 101);
-  var rd4 = Math.floor(Math.random() * 101);
-  var rd5 = Math.floor(Math.random() * 101);
+  var rd3 = generateRandomNumbers();
+  var rd4 = generateRandomNumbers();
+  var rd5 = generateRandomNumbers();
 
   var rdBtn = Math.floor(Math.random() * 4);
 
-  // set the question
-  question.innerText = rd1 + ' + ' + rd2 + ' = ';
+  // select the opeator
+  var selectedOperator = operatorSelect.value;
 
-  // calculate the real answer
-  answer = rd1 + rd2;
+  // set the question and answers
+  if (selectedOperator === '+') {
+    question.innerText = rd1 + ' + ' + rd2 + ' = ';
+    answer = rd1 + rd2;
+  } else if (selectedOperator === '-') {
+    question.innerText = rd1 + ' - ' + rd2 + ' = ';
+    answer = rd1 - rd2;
+  } else if (selectedOperator === '*') {
+    question.innerText = rd1 + ' x ' + rd2 + ' = ';
+    answer = Math.floor(rd1 * rd2);
+  } else if (selectedOperator === '/') {
+    question.innerText = rd1 + ' ÷ ' + rd2 + ' = ';
+    answer = Math.floor(rd1 / rd2);
+  }
 
-  // Set the random  on the buttons
+  // Set the random numbers on the buttons
   AnsBtn1.innerText = rd3;
   AnsBtn2.innerText = rd4;
   AnsBtn3.innerText = rd5;
 
-  // Depending on the value of rdBtn, set the real answer accordingly
+  // Depending on the value of rdBtn, set the real answer randomly
   if (rdBtn === 1) {
     AnsBtn1.innerText = answer;
   } else if (rdBtn === 2) {
@@ -72,7 +100,10 @@ function quizzz() {
 }
 
 /**
- * Check Answers
+ * Check Answers Function
+ *
+ * @param {number} buttonNumber - The number of the answer button (1 or 2 or 3) that the user was clicked
+ * To check the selected answer.
  */
 function checkAnswer(buttonNumber) {
   var btn;
@@ -91,6 +122,10 @@ function checkAnswer(buttonNumber) {
 
 /**
  * Stop the game
+ *
+ * Reset all buttons styles
+ * Clear all texts
+ * Show the total points scored by the user
  */
 function gameStop() {
   startBtn.setAttribute('class', 'startGameBtn activeStart');
@@ -98,6 +133,8 @@ function gameStop() {
 
   stopBtn.setAttribute('class', 'stopGameBtn inactiveStop');
   stopBtn.disabled = true;
+
+  operatorSelect.hidden = true;
 
   AnsBtn1.setAttribute('class', 'firstBtn inactiveAnswerButton');
   AnsBtn1.disabled = true;
