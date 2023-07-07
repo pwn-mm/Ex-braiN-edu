@@ -66,7 +66,7 @@ function quizzz() {
 
   var rdBtn = Math.floor(Math.random() * 4);
 
-  // select the opeator
+  // select the operator
   var selectedOperator = operatorSelect.value;
 
   // set the question and answers
