@@ -3,27 +3,56 @@
   font-family: sans-serif;
 }
 
-/* Header */
+.gameContainer {
+  padding: 10px;
+  position: relative;
+}
+
 .gameHeader {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  color: teal;
   padding: 10px;
-  font-size: 22px;
-  color: lightseagreen;
+  font-size: 24px;
+  letter-spacing: 5px;
+}
+
+.gameLevels {
+  position: absolute;
+  left: 5%;
+  top: 50%;
+}
+
+.levelSelect {
+  font-size: 20px;
+  padding: 5px;
+  background: teal;
+  color: #fff;
+}
+
+.gameStartBtn {
+  width: 130px;
+  padding: 8px;
+  margin-left: 10px;
+  font-size: 18px;
+  border: 1px solid teal;
+  background: teal;
+  color: #fff;
+  border-radius: 20px;
 }
 
 /* Table | Game View */
 
 .gameBody {
-  padding-top: 40px;
-  margin: auto;
+  padding-top: 20px;
+  margin: 50px auto;
 }
 
 .cell {
   color: #fff;
   width: 50px;
   height: 50px;
-  border: 2px solid grey;
+  border: 3px solid teal;
   text-align: center;
   padding: 8px;
 }

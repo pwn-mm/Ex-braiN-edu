@@ -1,50 +1,187 @@
-var mine, p1, p2, p3, p4, p5, p6, p7, p8;
+var mine1, p1, p2, p3, p4, p5, p6, p7, p8;
+var mine2, p9, p10, p11, p12, p13, p14, p15, p16;
+var mine3, p17, p18, p19, p20, p21, p22, p23, p24;
+
+var gameStart = false;
 var gameOver = false;
+
+var selectedLevel;
+var selectLevel = document.getElementById('levelSelect');
+
 var count = 0;
-var totalCellsWithoutBomb = 35;
-buildMine();
 
-// set the mine for the game
-function buildMine() {
-  var xAxis = Math.floor(Math.random() * 6 + 1);
-  var yAxis = Math.floor(Math.random() * 6 + 1);
+var totalCellsWithoutOneBomb = 35;
+var totalCellsWithoutTwoBombs = 34;
+var totalCellsWithoutThreeBombs = 33;
 
-  mine = xAxis + '' + yAxis;
-  console.log(mine);
+var totalCells = 36;
 
-  //   To check the valid position near mine
-  p1 = xAxis - 1 + '' + (yAxis - 1);
-  p2 = xAxis - 1 + '' + yAxis;
-  p3 = xAxis - 1 + '' + (yAxis + 1);
-  p4 = xAxis + '' + (yAxis - 1);
-  p5 = xAxis + '' + (yAxis + 1);
-  p6 = xAxis + 1 + '' + (yAxis - 1);
-  p7 = xAxis + 1 + '' + yAxis;
-  p8 = xAxis + 1 + '' + (yAxis + 1);
+/**
+ * Start Game
+ *
+ * Game start depending on the level that user choose
+ */
+function startGame() {
+  gameStart = true;
+
+  // Check the user selected level
+  selectedLevel = selectLevel.value;
+  if (selectedLevel == '1') {
+    console.log('Bomb 1');
+    buildFirstMine();
+  } else if (selectedLevel == '2') {
+    console.log('Bomb 2');
+    buildFirstMine();
+    buildSecondMine();
+  } else {
+    console.log('Bomb 3');
+    buildFirstMine();
+    buildSecondMine();
+    buildThirdMine();
+  }
 }
 
-// click each cell
+// Set the first mine
+function buildFirstMine() {
+  var xAxis1 = Math.floor(Math.random() * 6 + 1);
+  var yAxis1 = Math.floor(Math.random() * 6 + 1);
+  mine1 = xAxis1 + '' + yAxis1;
+
+  //   To check the valid position near first mine
+  p1 = xAxis1 - 1 + '' + (yAxis1 - 1);
+  p2 = xAxis1 - 1 + '' + yAxis1;
+  p3 = xAxis1 - 1 + '' + (yAxis1 + 1);
+  p4 = xAxis1 + '' + (yAxis1 - 1);
+  p5 = xAxis1 + '' + (yAxis1 + 1);
+  p6 = xAxis1 + 1 + '' + (yAxis1 - 1);
+  p7 = xAxis1 + 1 + '' + yAxis1;
+  p8 = xAxis1 + 1 + '' + (yAxis1 + 1);
+
+  console.log(mine1);
+}
+
+// Set the second mine
+function buildSecondMine() {
+  var xAxis2 = Math.floor(Math.random() * 6 + 1);
+  var yAxis2 = Math.floor(Math.random() * 6 + 1);
+  mine2 = xAxis2 + '' + yAxis2;
+
+  while (
+    mine2 == mine1 ||
+    mine2 == p1 ||
+    mine2 == p2 ||
+    mine2 == p3 ||
+    mine2 == p4 ||
+    mine2 == p5 ||
+    mine2 == p6 ||
+    mine2 == p7 ||
+    mine2 == p8
+  ) {
+    var xAxis2 = Math.floor(Math.random() * 6 + 1);
+    var yAxis2 = Math.floor(Math.random() * 6 + 1);
+    mine2 = xAxis2 + '' + yAxis2;
+  }
+
+  p9 = xAxis2 - 1 + '' + (yAxis2 - 1);
+  p10 = xAxis2 - 1 + '' + yAxis2;
+  p11 = xAxis2 - 1 + '' + (yAxis2 + 1);
+  p12 = xAxis2 + '' + (yAxis2 - 1);
+  p13 = xAxis2 + '' + (yAxis2 + 1);
+  p14 = xAxis2 + 1 + '' + (yAxis2 - 1);
+  p15 = xAxis2 + 1 + '' + yAxis2;
+  p16 = xAxis2 + 1 + '' + (yAxis2 + 1);
+
+  console.log(mine2);
+}
+
+// Set the third mine
+function buildThirdMine() {
+  var xAxis3 = Math.floor(Math.random() * 6 + 1);
+  var yAxis3 = Math.floor(Math.random() * 6 + 1);
+  mine3 = xAxis3 + '' + yAxis3;
+
+  while (
+    mine3 == mine1 ||
+    mine3 == p1 ||
+    mine3 == p3 ||
+    mine3 == p3 ||
+    mine3 == p4 ||
+    mine3 == p5 ||
+    mine3 == p6 ||
+    mine3 == p7 ||
+    mine3 == p8 ||
+    mine3 == mine2 ||
+    mine3 == p9 ||
+    mine3 == p10 ||
+    mine3 == p11 ||
+    mine3 == p12 ||
+    mine3 == p13 ||
+    mine3 == p14 ||
+    mine3 == p15 ||
+    mine3 == p16
+  ) {
+    var xAxis3 = Math.floor(Math.random() * 6 + 1);
+    var yAxis3 = Math.floor(Math.random() * 6 + 1);
+    mine3 = xAxis3 + '' + yAxis3;
+  }
+
+  p17 = xAxis3 - 1 + '' + (yAxis3 - 1);
+  p18 = xAxis3 - 1 + '' + yAxis3;
+  p19 = xAxis3 - 1 + '' + (yAxis3 + 1);
+  p20 = xAxis3 + '' + (yAxis3 - 1);
+  p21 = xAxis3 + '' + (yAxis3 + 1);
+  p22 = xAxis3 + 1 + '' + (yAxis3 - 1);
+  p23 = xAxis3 + 1 + '' + yAxis3;
+  p24 = xAxis3 + 1 + '' + (yAxis3 + 1);
+
+  console.log(mine3);
+}
+
+// Click each cell
 function press(cellObj) {
-  if (gameOver == false || count !== totalCellsWithoutBomb) {
+  /**
+   * Logic when the press function should work
+   *
+   *  - gameStart must == true
+   *  - gameOver must == false
+   *  - count should not be the same depending on the game level
+   *  - in game level 1 : 35 counts without one bomb
+   *  - in game level 2 : 34 counts without two bombs
+   */
+  var isLevel1 = selectedLevel === '1';
+  var isLevel2 = selectedLevel === '2';
+
+  if (
+    gameStart &&
+    gameOver == false &&
+    (isLevel1
+      ? totalCellsWithoutOneBomb
+      : isLevel2
+      ? totalCellsWithoutTwoBombs
+      : totalCellsWithoutThreeBombs)
+  ) {
     var userClickCell = cellObj.id;
 
     /**
      * Main 3 logics for the game
      *
      * Condition 1 : User directly clicks the bomb
-     * Condition 2 : User clicks the cell that touching the bomb
-     * Condition 3 : User clicks all the cells except the bomb
-     * Condition 4 : User click safe cells
+     * Condition 2 : User clicks all the cells except the bomb
+     * Condition 3 : User click safe cells
      */
 
     // Condition 1 : User directly clicks the bomb
-    if (userClickCell == mine) {
+    if (
+      userClickCell == mine1 ||
+      userClickCell == mine2 ||
+      userClickCell == mine3
+    ) {
       document.getElementById('gameOver').play();
       cellObj.style.backgroundColor = 'red';
       cellObj.innerText = 'BOMB';
       gameOverAnnounce();
     }
-    // Condition 2 : User clicks the cell that touching the bomb
+    // Condition 2 : User clicks the cells those around the bomb but not touching the bomb
     else if (
       userClickCell == p1 ||
       userClickCell == p2 ||
@@ -53,7 +190,23 @@ function press(cellObj) {
       userClickCell == p5 ||
       userClickCell == p6 ||
       userClickCell == p7 ||
-      userClickCell == p8
+      userClickCell == p8 ||
+      userClickCell == p9 ||
+      userClickCell == p10 ||
+      userClickCell == p11 ||
+      userClickCell == p12 ||
+      userClickCell == p13 ||
+      userClickCell == p14 ||
+      userClickCell == p15 ||
+      userClickCell == p16 ||
+      userClickCell == p17 ||
+      userClickCell == p18 ||
+      userClickCell == p19 ||
+      userClickCell == p20 ||
+      userClickCell == p21 ||
+      userClickCell == p22 ||
+      userClickCell == p23 ||
+      userClickCell == p24
     ) {
       document.getElementById('clickSound').play();
       count += 1;
@@ -62,7 +215,7 @@ function press(cellObj) {
       cellObj.onclick = null;
       checkWin();
     }
-    // Condition 4 : User click clearly
+    // Condition 3 : User click clearly without touching any bombs
     else {
       document.getElementById('clickSound').play();
       count += 1;
@@ -73,11 +226,15 @@ function press(cellObj) {
   }
 }
 
-// Announce when the game's over
+/**
+ * Game Over()
+ *
+ * if user directly click one of two bombs, GAME OVER.
+ */
 function gameOverAnnounce() {
   gameOver = true;
 
-  for (let i = 0; i < 36; i++) {
+  for (let i = 0; i < totalCells; i++) {
     document.getElementsByClassName('cell')[i].style.backgroundColor = 'red';
   }
 
@@ -92,12 +249,32 @@ function gameOverAnnounce() {
   document.getElementById('45').innerText = 'R';
 }
 
-// Check if the user won the game
+/**
+ * Check Win Function
+ *
+ * Check everytime after user press if the user won the game
+ */
 function checkWin() {
-  if (count === totalCellsWithoutBomb) {
+  if (selectedLevel == '1') {
+    gameWin(count, totalCellsWithoutOneBomb);
+  } else if (selectedLevel == '2') {
+    gameWin(count, totalCellsWithoutTwoBombs);
+  } else {
+    gameWin(count, totalCellsWithoutThreeBombs);
+  }
+}
+
+/**
+ * Main Logic for showing game win()
+ *
+ * @param {Number} count  : Total times that the user presses
+ * @param {Number} totalCellsWithoutBombs : Decide bomb quantity depending on the user's choosen level
+ */
+function gameWin(count, totalCellsWithoutBombs) {
+  if (count === totalCellsWithoutBombs) {
     gameOver = true;
     document.getElementById('gameWin').play();
-    for (let i = 0; i < 36; i++) {
+    for (let i = 0; i < totalCells; i++) {
       document.getElementsByClassName('cell')[i].style.backgroundColor = 'teal';
     }
 
