@@ -22,7 +22,13 @@ var totalCells = 36;
  * Game start depending on the level that user choose
  */
 function startGame() {
+  var startBtn = document.getElementById('gameStartBtn');
   gameStart = true;
+
+  startBtn.disabled = true;
+  startBtn.setAttribute('class', 'gameStartBtn inactiveBtn');
+
+  selectLevel.disabled = true;
 
   // Check the user selected level
   selectedLevel = selectLevel.value;
@@ -77,8 +83,8 @@ function buildSecondMine() {
     mine2 == p7 ||
     mine2 == p8
   ) {
-    var xAxis2 = Math.floor(Math.random() * 6 + 1);
-    var yAxis2 = Math.floor(Math.random() * 6 + 1);
+    xAxis2 = Math.floor(Math.random() * 6 + 1);
+    yAxis2 = Math.floor(Math.random() * 6 + 1);
     mine2 = xAxis2 + '' + yAxis2;
   }
 
@@ -120,8 +126,8 @@ function buildThirdMine() {
     mine3 == p15 ||
     mine3 == p16
   ) {
-    var xAxis3 = Math.floor(Math.random() * 6 + 1);
-    var yAxis3 = Math.floor(Math.random() * 6 + 1);
+    xAxis3 = Math.floor(Math.random() * 6 + 1);
+    yAxis3 = Math.floor(Math.random() * 6 + 1);
     mine3 = xAxis3 + '' + yAxis3;
   }
 

@@ -3,6 +3,7 @@
   font-family: sans-serif;
 }
 
+/* The Whole Game Body */
 .gameContainer {
   padding: 10px;
   position: relative;
@@ -13,14 +14,17 @@
   margin-top: 30px;
   color: teal;
   padding: 10px;
-  font-size: 24px;
+  font-size: 30px;
   letter-spacing: 5px;
+  min-width: 100%;
 }
 
+/* Select Game Levels */
+
 .gameLevels {
-  position: absolute;
-  left: 5%;
-  top: 50%;
+  text-align: center;
+  margin-top: 30px;
+  min-width: 100%;
 }
 
 .levelSelect {
@@ -32,19 +36,27 @@
 
 .gameStartBtn {
   width: 130px;
-  padding: 8px;
+  padding: 10px;
   margin-left: 10px;
   font-size: 18px;
-  border: 1px solid teal;
-  background: teal;
   color: #fff;
+  border: 1px solid teal;
   border-radius: 20px;
+}
+
+.activeBtn {
+  background-color: teal;
+}
+
+.inactiveBtn {
+  background-color: teal;
+  opacity: 0.7;
 }
 
 /* Table | Game View */
 
 .gameBody {
-  padding-top: 20px;
+  padding-top: 10px;
   margin: 50px auto;
 }
 

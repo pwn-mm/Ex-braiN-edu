@@ -8,6 +8,21 @@
   <body class="gameContainer">
     <h1 class="gameHeader">MineSweeper</h1>
 
+    <div class="gameLevels">
+      <select class="levelSelect" id="levelSelect">
+        <option value="1">Level 1 (1 bomb)</option>
+        <option value="2">Level 2 (2 bombs)</option>
+        <option value="3">Level Max (3 bombs)</option>
+      </select>
+      <button
+        id="gameStartBtn"
+        class="gameStartBtn activeBtn"
+        onclick="startGame()"
+      >
+        Start Game
+      </button>
+    </div>
+
     <table class="gameBody">
       <tr>
         <td class="cell" id="11" onclick="press(this)"></td>
@@ -58,15 +73,6 @@
         <td class="cell" id="66" onclick="press(this)"></td>
       </tr>
     </table>
-
-    <div class="gameLevels">
-      <select class="levelSelect" id="levelSelect">
-        <option value="1">Level 1 (1 bomb)</option>
-        <option value="2">Level 2 (2 bombs)</option>
-        <option value="3">Level Max (3 bombs)</option>
-      </select>
-      <button class="gameStartBtn" onclick="startGame()">Start Game</button>
-    </div>
 
     <audio id="clickSound" src="./btnclick.mp3"></audio>
     <audio id="gameOver" src="./gameover.mp3"></audio>
