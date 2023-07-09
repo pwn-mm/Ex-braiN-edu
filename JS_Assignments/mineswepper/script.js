@@ -16,17 +16,26 @@ var totalCellsWithoutThreeBombs = 33;
 
 var totalCells = 36;
 
+var cells = document.getElementsByClassName('cell');
+
+var startBtn = document.getElementById('gameStartBtn');
+
+var restartBtn = document.getElementById('restartBtn');
+restartBtn.disabled = true;
+
 /**
  * Start Game
  *
  * Game start depending on the level that user choose
  */
 function startGame() {
-  var startBtn = document.getElementById('gameStartBtn');
   gameStart = true;
 
   startBtn.disabled = true;
   startBtn.setAttribute('class', 'gameStartBtn inactiveBtn');
+
+  restartBtn.disabled = false;
+  restartBtn.setAttribute('class', 'restartBtn activeBtn');
 
   selectLevel.disabled = true;
 
@@ -212,7 +221,10 @@ function press(cellObj) {
       userClickCell == p21 ||
       userClickCell == p22 ||
       userClickCell == p23 ||
-      userClickCell == p24
+      userClickCell == p24 ||
+      userClickCell == mine1 ||
+      userClickCell == mine2 ||
+      userClickCell == mine3
     ) {
       document.getElementById('clickSound').play();
       count += 1;
@@ -242,6 +254,11 @@ function gameOverAnnounce() {
 
   for (let i = 0; i < totalCells; i++) {
     document.getElementsByClassName('cell')[i].style.backgroundColor = 'red';
+  }
+
+  // Reset '1' texts before showing Game Over message
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].innerText = '';
   }
 
   document.getElementById('32').innerText = 'G';
@@ -279,6 +296,12 @@ function checkWin() {
 function gameWin(count, totalCellsWithoutBombs) {
   if (count === totalCellsWithoutBombs) {
     gameOver = true;
+
+    // Reset '1' texts before showing Game Win message
+    for (var i = 0; i < cells.length; i++) {
+      cells[i].innerText = '';
+    }
+
     document.getElementById('gameWin').play();
     for (let i = 0; i < totalCells; i++) {
       document.getElementsByClassName('cell')[i].style.backgroundColor = 'teal';
@@ -294,4 +317,77 @@ function gameWin(count, totalCellsWithoutBombs) {
     document.getElementById('44').innerText = 'N';
     document.getElementById('45').innerText = '!';
   }
+}
+
+/**
+ * Restart game()
+ *
+ * restart all mines, positions and cells
+ */
+
+function restartGame() {
+  restartBtn.disabled = true;
+  restartBtn.setAttribute('class', 'restartBtn inactiveBtn');
+
+  gameStart = false;
+  gameOver = false;
+  count = 0;
+
+  startBtn.disabled = false;
+  startBtn.setAttribute('class', 'gameStartBtn activeBtn');
+
+  restartBtn.disabled = true;
+  selectLevel.disabled = false;
+
+  document.getElementById('gameOver').pause();
+  document.getElementById('gameWin').pause();
+
+  mine1 = null;
+  mine2 = null;
+  mine3 = null;
+
+  p1 = '';
+  p3 = '';
+  p3 = '';
+  p4 = '';
+  p5 = '';
+  p6 = '';
+  p7 = '';
+  p8 = '';
+  p9 = '';
+  p10 = '';
+  p11 = '';
+  p12 = '';
+  p13 = '';
+  p14 = '';
+  p15 = '';
+  p16 = '';
+  p17 = '';
+  p18 = '';
+  p19 = '';
+  p20 = '';
+  p21 = '';
+  p22 = '';
+  p23 = '';
+  p24 = '';
+
+  // Reset press function
+  for (var i = 0; i < cells.length; i++) {
+    cells[i].style.backgroundColor = '';
+    cells[i].innerText = '';
+    cells[i].onclick = function () {
+      press(this);
+    };
+  }
+
+  // Reset game over messages
+  document.getElementById('32').innerText = '';
+  document.getElementById('33').innerText = '';
+  document.getElementById('34').innerText = '';
+  document.getElementById('35').innerText = '';
+
+  document.getElementById('42').innerText = '';
+  document.getElementById('43').innerText = '';
+  document.getElementById('44').innerText = '';
+  document.getElementById('45').innerText = '';
 }
