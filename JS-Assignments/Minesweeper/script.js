@@ -258,7 +258,7 @@ function gameOverAnnounce() {
 
   // Reset '1' texts before showing Game Over message
   for (var i = 0; i < cells.length; i++) {
-    cells[i].innerText = '';
+    if (cells[i].innerText !== 'BOMB') cells[i].innerText = '';
   }
 
   document.getElementById('32').innerText = 'G';
@@ -299,7 +299,7 @@ function gameWin(count, totalCellsWithoutBombs) {
 
     // Reset '1' texts before showing Game Win message
     for (var i = 0; i < cells.length; i++) {
-      cells[i].innerText = '';
+      if (cells[i].innerText !== 'BOMB') cells[i].innerText = '';
     }
 
     document.getElementById('gameWin').play();
@@ -339,8 +339,8 @@ function restartGame() {
   restartBtn.disabled = true;
   selectLevel.disabled = false;
 
-  document.getElementById('gameOver').pause();
-  document.getElementById('gameWin').pause();
+  // document.getElementById('gameOver').pause();
+  // document.getElementById('gameWin').pause();
 
   mine1 = null;
   mine2 = null;
