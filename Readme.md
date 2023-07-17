@@ -39,7 +39,7 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
         - Tracks the player's score and displays it at the end of the game.
 
     - [Minesweeper](JS-Assignments/MineSweeper)
-        
+  -     
         - Description: This project is a classic Minesweeper game implementation. Players need to uncover cells on a grid without hitting any mines. They can use clues from adjacent cells to deduce the locations of mines and safely reveal the remaining cells.
         
         - Technologies: JavaScript, HTML, CSS
