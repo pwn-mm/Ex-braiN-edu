@@ -22,13 +22,13 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
   - Technologies : JavaScript
 
     - [Operators](JS-Assignments/Operators)
-  - 
+
         - Description: This project focuses on implementing basic JavaScript concepts such as variables, functions, and conditionals. It includes a calculator application that performs arithmetic operations.
         
         - Technologies: JavaScript, HTML, CSS
 
-    - [Shuffle Cards](JS-Assignments/ShuffleCards)
-  - 
+    - [Shuffle Cards](JS-Assignments/ShuffleCards) 
+
         - Description: This project is a fun game that helps practice different mathematical operators. It      displays shuffled cards with arithmetic expressions, and the player needs to choose the correct answer based on the operator presented.
       
         - Technologies: JavaScript, HTML, CSS
@@ -39,7 +39,7 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
         - Tracks the player's score and displays it at the end of the game.
 
     - [Minesweeper](JS-Assignments/MineSweeper)
-  -     
+      
         - Description: This project is a classic Minesweeper game implementation. Players need to uncover cells on a grid without hitting any mines. They can use clues from adjacent cells to deduce the locations of mines and safely reveal the remaining cells.
         
         - Technologies: JavaScript, HTML, CSS
