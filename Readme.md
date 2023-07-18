@@ -9,6 +9,7 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
   - [HTML CSS Assignments](#html-css-assignments)
   - [JavaScript Assignments](#javascript-assignments)
   - [Advanced HTML CSS Assignments](#advanced-html-css-assignments)
+  - [CSS Animations](#css-animations)
   - [Getting Started](#getting-started)
 
 ## HTML CSS Assignments
@@ -54,6 +55,11 @@ This repository contains the assignment projects for my studies in HTML, CSS, JS
 
 - **Basic JS Assignments**: [Html_Css](Advanced-Html-css/)
   - Technologies : HTML CSS
+
+## CSS Animations
+
+- **CSS Animations**: [CSS](Css-Animations/)
+  - Technologies : CSS
 
 
 ## Getting Started
