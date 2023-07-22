@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  /* border: 1px solid red; */
+}
+
+/* 
+  Header Section
+  Logo 
+  Lists
+*/
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 20px 40px 0 40px;
+}
+
+.header img {
+  padding: 10px;
+  height: 50px;
+}
+
+.logo h1 {
+  float: right;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+
+.header-list {
+  font-size: 22px;
+}
+
+.header-list span {
+  margin: 0 22px;
+}
+
+.header h3 {
+  padding: 10px;
+  border: 1px solid #303030;
+  border-radius: 30px;
+}
+
+/* Typing Animation */
+.typing-animation-container {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 20px;
+  font-size: 60px;
+  font-weight: bold;
+  white-space: nowrap;
+  letter-spacing: 3px;
+  overflow: hidden;
+}
+
+.typing-animation .one {
+  overflow: hidden;
+  width: 800px;
+  border-right: 4px solid black;
+  animation: type 3s steps(30), blink 0.8s linear infinite;
+}
+
+.typing-animation .two {
+  margin: 0 auto;
+  width: 500px;
+  border-right: 4px solid black;
+  overflow: hidden;
+  animation: type 3s steps(30), blink 0.8s linear infinite;
+}
+
+/* 
+  Watch Details 
+  Price / monthly installment plan
+  Trade In
+  Cashback
+*/
+.watch-details {
+  margin: 20px 40px 0 40px;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.watch-details input {
+  display: none;
+}
+
+.details-header,
+.details-trade {
+  display: flex;
+  flex-direction: column;
+}
+
+.details-header span {
+  padding: 8px;
+}
+
+[watchName] {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+[aluPrice],
+[steelPrice] {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.watch-details [aluPrice],
+.watch-details [steelPrice] {
+  display: none;
+}
+
+.details-trade .cashBack {
+  margin-top: 40px;
+}
+
+.details-trade span {
+  border: 3px soldi gray;
+  padding: 8px;
+}
+
+#trade:checked ~ .details-trade span:nth-child(1),
+#cashback:checked ~ .details-trade span:nth-child(2) {
+  border: none;
+  outline: 2px solid #0071e3;
+  border-radius: 20px;
+}
+
+/* Main Container of preview and selections */
+.wrapper {
+  position: relative;
+  max-width: 100%;
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+/*
+  Preview Section
+  Preview Case and straps can be changed due to user choice
+*/
+.preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 400px;
+  height: 400px;
+  box-shadow: 10px 5px 10px #303030;
+  border-radius: 10px;
+}
+
+.preview img {
+  position: absolute;
+  display: none;
+  height: 400px;
+}
+
+.preview-case img {
+  animation: case 1.2s linear;
+  z-index: 1;
+}
+
+.preview-case,
+.preview-straps {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.zoomable {
+  transition: transform 0.3s linear;
+}
+
+.zoomable:hover {
+  transform: scale(1.2);
+}
+
+.preview-straps img {
+  animation: strap 0.8s linear;
+}
+
+.preview input {
+  display: none;
+}
+
+#case1:checked ~ .preview-case #case1-img,
+#strap1:checked ~ .preview-straps #strap1-img {
+  display: block;
+}
+#case2:checked ~ .preview-case #case2-img,
+#strap2:checked ~ .preview-straps #strap2-img {
+  display: block;
+}
+#case3:checked ~ .preview-case #case3-img,
+#strap3:checked ~ .preview-straps #strap3-img {
+  display: block;
+}
+#case4:checked ~ .preview-case #case4-img,
+#strap4:checked ~ .preview-straps #strap4-img {
+  display: block;
+}
+#case5:checked ~ .preview-case #case5-img,
+#strap5:checked ~ .preview-straps #strap5-img {
+  display: block;
+}
+
+/* 
+  Select Cases and Straps 
+  Preview can be different according to this user selection
+*/
+.select-items {
+  position: relative;
+  display: flex;
+  min-width: 900px;
+  height: 500px;
+}
+
+.case-select {
+  position: absolute;
+  min-width: 600px;
+  top: 30px;
+  left: 10px;
+}
+
+.case-select h3,
+.strap-select h3 {
+  font-size: 27px;
+  letter-spacing: 2px;
+}
+
+.case-select h3 span,
+.strap-select h3 span {
+  margin-left: 10px;
+  opacity: 0.5;
+}
+
+.strap-select {
+  position: absolute;
+  min-width: 600px;
+  bottom: 170px;
+  left: 10px;
+}
+
+.select-items h3::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 800px;
+  height: 2px;
+  background-color: #303030;
+}
+
+.cases,
+.straps {
+  margin-top: 15px;
+  /* border: 1px solid red; */
+}
+
+.cases img,
+.straps img {
+  height: 80px;
+}
+
+/* 
+    Choose Material Buttons
+    Choose aluminium or steel
+    Price can be changed according to this choice
+*/
+.choose-material,
+.choose-material-2 {
+  position: absolute;
+  bottom: 0;
+}
+
+.choose-material {
+  left: 7px;
+}
+
+.choose-material-2 {
+  right: 7px;
+}
+
+.choose-material-input {
+  display: none;
+}
+
+#aluminium:checked ~ .wrapper .choose-material .add-material,
+#steel:checked ~ .wrapper .choose-material-2 .add-material {
+  border: none;
+  outline: 3px solid #0071e3;
+}
+
+#aluminium:checked ~ .watch-details .details-header [aluPrice] {
+  display: block;
+}
+
+#steel:checked ~ .watch-details .details-header [steelPrice] {
+  display: block;
+}
+
+.add-material {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  background-color: transparent;
+  outline: 2px solid gray;
+  border-radius: 10px;
+  border: none;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  line-height: 25px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail,
+.price {
+  display: flex;
+  flex-direction: column;
+}
+
+.detail-title {
+  font-weight: bold;
+}
+
+.price {
+  color: #303030;
+}
+
+.description {
+  margin-top: 10px;
+}
+
+/* Keyframes Animation */
+
+@keyframes type {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blink {
+  from {
+    border-right-color: transparent;
+  }
+}
+
+@keyframes case {
+  0% {
+    transform: scale(1.2);
+  }
+
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes strap {
+  0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}

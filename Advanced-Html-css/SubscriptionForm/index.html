@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Subscription Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="card">
+        <h1>Subscribe Our Channel</h1>
+        <form>
+          <label for="name">Username:</label>
+          <input username type="text" id="name" name="name" required />
+
+          <label for="password">Password:</label>
+          <input
+            password
+            type="password"
+            id="password"
+            name="password"
+            required
+          />
+          <p condition>
+            Password must be 8 digits.Must include [A-Z][a-z][0-9]
+          </p>
+
+          <label class="plan-title">Subscription Plan:</label>
+
+          <!-- Plans -->
+
+          <label class="plan-name" for="free"> Free </label>
+          <input
+            id="free"
+            type="radio"
+            name="subscription"
+            value="free"
+            checked
+          />
+
+          <label class="plan-name" for="gold"> Gold </label>
+
+          <input id="gold" type="radio" name="subscription" value="gold" />
+
+          <label class="plan-name" for="diamond"> Diamond </label>
+
+          <input
+            id="diamond"
+            type="radio"
+            name="subscription"
+            value="diamond"
+          />
+
+          <div class="description-text">
+            <span class="plan-description p1">
+              Access our basic content for free. Enjoy limited features and
+              limited access to exclusive content.
+            </span>
+            <span class="plan-description p2">
+              Upgrade to our Gold Plan for a premium experience. Enjoy ad-free
+              content, early access to new videos, and exclusive perks.
+            </span>
+            <span class="plan-description p3"
+              >Experience the ultimate subscription with our Diamond Plan. Enjoy
+              all Gold Plan benefits plus access to our complete library,
+              behind-the-scenes content, and priority support.</span
+            >
+          </div>
+          <button type="submit" class="submit">Subscribe</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

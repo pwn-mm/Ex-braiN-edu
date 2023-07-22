@@ -18,6 +18,10 @@
   overflow: hidden;
 }
 
+iframe {
+  display: none;
+}
+
 /* Header */
 .logo {
   float: left;
@@ -191,7 +195,7 @@
 .b8 {
   bottom: 100px;
   left: 100px;
-  animation: bubble 10s linear infinite;
+  animation: bubble 7s linear infinite;
 }
 
 .b9 {
@@ -203,7 +207,7 @@
 .b10 {
   top: 200px;
   left: 150px;
-  animation: bubble 12s linear infinite;
+  animation: bubble 5s linear infinite;
 }
 
 .b11 {
@@ -215,13 +219,13 @@
 .b12 {
   bottom: 70px;
   left: 270px;
-  animation: bubble 10s linear infinite;
+  animation: bubble 9s linear infinite;
 }
 
 .b13 {
   bottom: 50px;
   right: 200px;
-  animation: bubble 9s linear infinite;
+  animation: bubble 12s linear infinite;
 }
 
 .b14 {
