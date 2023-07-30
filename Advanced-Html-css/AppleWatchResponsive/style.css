@@ -1,24 +1,24 @@
 :root {
+  --primary-color: #87ceeb;
   --black: #000;
   --white: #fff;
-  --primary-color: #87ceeb;
   --gray: gray;
 
-  --mb-header-font-size: 18px;
   --base-font-size: 20px;
-  --header-font-size: 26px;
   --icon-size: 30px;
+
+  --header-font-size: 26px;
+  --mb-header-font-size: 18px;
 
   --hero-header-size: 40px;
   --hero-padding: 60px;
-  --hero-btn-color: #87ceeb;
 
   --banner-text: 26px;
 
-  --products-header: 30px;
-  --products-padding: 24px;
+  --products-header-padding: 30px;
+  --products-margin: 24px;
 
-  --products-margin: 50px;
+  --mb-products-margin: 30px;
 }
 
 * {
@@ -28,6 +28,48 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Header List & Mobile List & Icon Hover */
+.desktop-list li,
+.mobile-list li,
+footer p:nth-of-type(2) span {
+  position: relative;
+}
+
+.desktop-list li::after,
+.mobile-list li::after {
+  content: '';
+  position: absolute;
+  background-color: gold;
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -10px;
+  transition: all 0.3s linear;
+}
+
+.desktop-list li:hover::after {
+  width: 70%;
+}
+
+.mobile-list li:hover::after {
+  width: 10%;
+}
+
+footer p:nth-of-type(2) span::after {
+  content: '';
+  position: absolute;
+  background-color: gold;
+  height: 3px;
+  width: 0%;
+  left: 0;
+  bottom: 0;
+  transition: all 0.3s linear;
+}
+
+footer p:nth-of-type(2) span:hover::after {
+  width: 100%;
 }
 
 /* Start Header CSS */
@@ -55,7 +97,6 @@ a > ion-icon {
 }
 
 header .desktop-list {
-  border: 1px solid red;
   color: var(--white);
   list-style: none;
 }
@@ -134,15 +175,15 @@ ion-icon[name='menu-outline'] {
   outline: none;
   border: none;
   border-radius: 15px;
-  background-color: var(--hero-btn-color);
+  background-color: var(--primary-color);
   font-size: var(--base-font-size);
-  transition: all 0.7s linear;
+  transition: all 0.4s linear;
 }
 
 .hero_details button:hover {
   color: var(--white);
   background-color: var(--black);
-  border: 2px solid var(--hero-btn-color);
+  border: 2px solid var(--primary-color);
 }
 /* End Hero CSS */
 
@@ -174,7 +215,6 @@ ion-icon[name='menu-outline'] {
 
 /* Products Section CSS */
 .products_wrapper {
-  min-height: 80vh;
   color: var(--white);
   background-color: var(--black);
   padding: 30px;
@@ -186,7 +226,7 @@ ion-icon[name='menu-outline'] {
 .products_header {
   text-align: center;
   word-wrap: break-word;
-  margin-top: var(--products-padding);
+  margin-top: var(--products-margin);
 }
 
 .products_header h1 {
@@ -207,7 +247,7 @@ ion-icon[name='menu-outline'] {
 
 .products_header p {
   font-size: var(--base-font-size);
-  padding: var(--products-header);
+  padding: var(--products-header-padding);
   line-height: 40px;
 }
 
@@ -274,10 +314,10 @@ footer {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  min-height: 250px;
+  min-height: 300px;
   background-color: var(--black);
   color: var(--white);
-  border-top: 1px solid gray;
+  border-top: 1px solid var(--gray);
   padding: 35px;
 }
 
@@ -292,17 +332,23 @@ footer ion-icon {
 
 footer p:first-of-type {
   font-size: 22px;
-  margin: 40px;
+  margin: 30px;
   line-height: 35px;
 }
 
 footer p:nth-of-type(2) {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 footer p:nth-of-type(2) span {
   font-size: 30px;
-  margin: 30px;
+  margin: 20px 40px;
+  padding: 10px;
+}
+
+footer p:nth-of-type(3) {
+  margin-top: 30px;
+  font-size: 22px;
 }
 
 /* Media Queries */
@@ -338,7 +384,7 @@ footer p:nth-of-type(2) span {
 @media screen and (max-width: 720px) {
   /* Responsive Header */
   header {
-    border-bottom: 1px solid var(--icon-color);
+    border-bottom: 1px solid var(--gray);
   }
 
   header ul {
@@ -388,11 +434,11 @@ footer p:nth-of-type(2) span {
   }
 
   .banner_text:first-of-type {
-    left: 5px;
+    left: 15px;
   }
 
   .banner_text:nth-of-type(2) {
-    left: 5px;
+    left: 15px;
   }
 
   /* Responsive Products Items */
@@ -423,6 +469,6 @@ footer p:nth-of-type(2) span {
 
   .series7-container div,
   .series8-container div {
-    margin-top: var(--products-margin);
+    margin-top: var(--mb-products-margin);
   }
 }
