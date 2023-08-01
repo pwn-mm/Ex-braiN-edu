@@ -1,0 +1,261 @@
+:root {
+  --primary-color: #004134;
+  --border-color: #ccc;
+  --white: #f9f9f9;
+  --black: #000;
+}
+
+* {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 10px;
+  color: var(--white);
+  background-color: var(--primary-color);
+}
+
+textarea {
+  color: var(--white);
+  resize: none;
+  box-shadow: 3px 3px 3px var(--border-color);
+}
+
+.container {
+  max-width: 65%;
+  margin: 0 auto;
+  padding-top: 5px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: var(--white);
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 18px;
+  margin: 5px 0;
+}
+
+@media screen and (max-width: 720px) {
+  .container {
+    max-width: 80%;
+  }
+
+  header h1 {
+    font-size: 29px;
+  }
+}
+
+/* Styling for the instructions paragraph */
+
+.instructions {
+  border: 5px dotted var(--border-color);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 30px 0;
+}
+
+.instructions p {
+  font-size: 1.2rem;
+}
+
+/* Styling for the Result */
+.user-string textarea,
+.result textarea {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.user-string textarea {
+  width: 100%;
+}
+
+.result textarea {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.result p {
+  font-size: 24px;
+  text-align: center;
+}
+
+@media screen and (max-width: 720px) {
+  .user-string textarea,
+  .result textarea {
+    width: 100%;
+    height: 150px;
+  }
+
+  .result textarea {
+    margin-bottom: 20px;
+  }
+}
+
+/* Stying for User input */
+.user-input {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0;
+}
+
+.user-input input {
+  width: 350px;
+  height: 30px;
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 5px 5px 10px gray;
+}
+
+.user-input input:focus {
+  outline: none;
+}
+
+#userInput:placeholder-shown ~ #inputText {
+  display: none;
+}
+
+.user-input #inputText {
+  color: var(--white);
+  text-shadow: 3px 3px 10px var(--border-color);
+}
+
+.reset-btn {
+  text-align: center;
+}
+
+.reset-btn button {
+  color: var(--white);
+  background: red;
+  opacity: 0.9;
+  border: none;
+  width: 150px;
+  margin: 10px;
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  outline: none;
+  box-shadow: 3px 5px 5px gray;
+  transition: all 0.3s linear;
+}
+
+.reset-btn button:hover {
+  transform: scale(1.1);
+}
+
+/* Styling for the method buttons */
+.method-buttons {
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-wrap: wrap;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+.method-button {
+  color: var(--white);
+  background: var(--primary-color);
+  opacity: 0.9;
+  border: none;
+  width: 120px;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--white);
+  outline: none;
+  box-shadow: 3px 5px 5px gray;
+  transition: all 0.3s linear;
+}
+
+.method-button:hover {
+  transform: scale(1.1);
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+/* Styling for the keyboard */
+.virtual-keyboard {
+  border: 1px solid var(--white);
+  text-align: center;
+  margin: 30px 65px;
+}
+
+.material-icons {
+  font-size: 26px;
+}
+
+@media screen and (max-width: 720px) {
+  .virtual-keyboard {
+    text-align: center;
+    margin: 0px;
+  }
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.keyboard button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  border: none;
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  margin: 0.3rem;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 3px 5px 5px var(--border-color);
+  transition: all 0.3s linear;
+}
+
+.keyboard button:hover {
+  transform: scale(1.1);
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--primary-color);
+}
+
+.btn {
+  width: 45px;
+  height: 40px;
+}
+
+.delete {
+  width: 50px;
+}
+
+.space {
+  width: 50%;
+}
+
+/* For keycap */
+.upper {
+  text-transform: uppercase;
+}
+
+/* Footer */
+footer {
+  color: var(--white);
+  background-color: var(--primary-color);
+  opacity: 0.9;
+  text-align: center;
+  padding: 5px;
+}
