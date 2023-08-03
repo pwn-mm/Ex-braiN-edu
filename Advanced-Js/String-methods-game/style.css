@@ -193,7 +193,7 @@ header p {
 .virtual-keyboard {
   border: 1px solid var(--white);
   text-align: center;
-  margin: 30px 65px;
+  margin: 30px 60px;
 }
 
 .material-icons {
