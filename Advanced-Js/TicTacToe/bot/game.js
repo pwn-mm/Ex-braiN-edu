@@ -17,9 +17,12 @@ var currentUser = user;
 //? isFinished
 var isFinished = false;
 
+//? isBotTurn
+var isBotTurn = false;
+
 //? playGame()
 function playGame(paramObj) {
-  if (isFinished == false) {
+  if (isFinished == false && !isBotTurn) {
     // get clicked row and column
     var temp = paramObj.id.split(',');
     // clicked row
@@ -63,13 +66,13 @@ function playGame(paramObj) {
     }
 
     // console.log(isValid);
-
     if (isValid == true) {
       paramObj.style.transform = 'scaleY(-1)';
       if (currentUser == user) {
         titleEl.innerText = 'Bot turn';
         paramObj.style.background = '#A52A2A';
         currentUser = bot;
+        isBotTurn = true;
         botTurn(paramObj.id);
       } else {
         titleEl.innerText = 'User turn';
@@ -78,6 +81,7 @@ function playGame(paramObj) {
         console.log(currentUser);
       }
     }
+    // isBotTurn = false;
     checkWinner();
   }
 }
@@ -98,6 +102,7 @@ function botTurn(userObj) {
     botTurn(userObj);
   } else {
     setTimeout(() => {
+      isBotTurn = false;
       document.getElementById(botClick).click();
     }, 1000);
   }
