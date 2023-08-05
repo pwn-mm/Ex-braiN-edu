@@ -49,6 +49,7 @@ function calculate(method) {
         result = textValue.charAt(charAtIndex);
       } else {
         alert('Invalid index!');
+        inputString.value = '';
       }
       break;
 
@@ -58,6 +59,7 @@ function calculate(method) {
         result = textValue.charCodeAt(charCodeIndex);
       } else {
         alert('Invalid index!');
+        inputString.value = '';
       }
       break;
 
@@ -74,7 +76,9 @@ function calculate(method) {
       break;
 
     case 'trim':
-      result = String(textarea.value).trim();
+      result = textValue
+        ? String(textarea.value).trim()
+        : alert('Must Enter a value');
       break;
 
     case 'inc':
@@ -113,7 +117,9 @@ function calculate(method) {
       break;
 
     case 'rmspace':
-      result = textValue ? textValue.split(' ').join('') : 'Must Enter a value';
+      result = textValue
+        ? textValue.split(' ').join('')
+        : alert('Must Enter a value');
       break;
 
     default:
