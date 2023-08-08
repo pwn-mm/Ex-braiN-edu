@@ -115,13 +115,6 @@ function calculate(method) {
         alert('Enter a valid value');
       }
       break;
-
-    case 'rmspace':
-      result = textValue
-        ? textValue.split(' ').join('')
-        : alert('Must Enter a value');
-      break;
-
     default:
       alert('Invalid method!');
       break;

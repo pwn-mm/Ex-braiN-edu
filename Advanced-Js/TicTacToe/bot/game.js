@@ -89,10 +89,9 @@ function playGame(paramObj) {
 function botTurn(userObj) {
   var botRow, botCol;
 
-  // check potential winning move by the user
-  var userMove = checkUserWinMove(user);
-
-  var botMove = checkBotWinMove(bot);
+  // check potential winning move by the user and bot
+  var userMove = checkWinningMove(user);
+  var botMove = checkWinningMove(bot);
 
   if (botMove) {
     var [row, col] = botMove;
@@ -135,266 +134,55 @@ function botTurn(userObj) {
 }
 
 // Check the winning move by user and block that move
-function checkUserWinMove(player) {
+function checkWinningMove(player) {
   // Every cell value of r1
-  const r1_0 = r1[0];
-  const r1_1 = r1[1];
-  const r1_2 = r1[2];
-  const r1_3 = r1[3];
+  // const r1_0 = r1[0];
+  // const r1_1 = r1[1];
+  // const r1_2 = r1[2];
+  // const r1_3 = r1[3];
 
   // Every cell value of r2
-  const r2_0 = r2[0];
-  const r2_1 = r2[1];
-  const r2_2 = r2[2];
-  const r2_3 = r2[3];
+  // const r2_0 = r2[0];
+  // const r2_1 = r2[1];
+  // const r2_2 = r2[2];
+  // const r2_3 = r2[3];
 
   // Every cell value of r3
-  const r3_0 = r3[0];
-  const r3_1 = r3[1];
-  const r3_2 = r3[2];
-  const r3_3 = r3[3];
+  // const r3_0 = r3[0];
+  // const r3_1 = r3[1];
+  // const r3_2 = r3[2];
+  // const r3_3 = r3[3];
 
   // Every cell value of r4
-  const r4_0 = r4[0];
-  const r4_1 = r4[1];
-  const r4_2 = r4[2];
-  const r4_3 = r4[3];
+  // const r4_0 = r4[0];
+  // const r4_1 = r4[1];
+  // const r4_2 = r4[2];
+  // const r4_3 = r4[3];
 
   // where each group of 4 elements represents a row.
-  const board = [
-    // r1
-    r1_0,
-    r1_1,
-    r1_2,
-    r1_3,
+  // const board = [
+  //   r1_0,
+  //   r1_1,
+  //   r1_2,
+  //   r1_3,
 
-    // r2
-    r2_0,
-    r2_1,
-    r2_2,
-    r2_3,
+  //   r2_0,
+  //   r2_1,
+  //   r2_2,
+  //   r2_3,
 
-    // r3
-    r3_0,
-    r3_1,
-    r3_2,
-    r3_3,
+  //   r3_0,
+  //   r3_1,
+  //   r3_2,
+  //   r3_3,
 
-    // r4
-    r4_0,
-    r4_1,
-    r4_2,
-    r4_3,
-  ];
+  //   r4_0,
+  //   r4_1,
+  //   r4_2,
+  //   r4_3,
+  // ];
 
-  // Check the user's winning move in horizontal rows
-  for (let i = 0; i < 4; i++) {
-    const rowIndex = i * 4;
-
-    if (
-      board[rowIndex] == player &&
-      board[rowIndex + 1] == player &&
-      board[rowIndex + 2] == player &&
-      board[rowIndex + 3] == 0
-    ) {
-      return [i + 1, 4];
-    }
-    if (
-      board[rowIndex] == player &&
-      board[rowIndex + 1] == player &&
-      board[rowIndex + 2] == 0 &&
-      board[rowIndex + 3] == player
-    ) {
-      return [i + 1, 3];
-    }
-    if (
-      board[rowIndex] == player &&
-      board[rowIndex + 1] == 0 &&
-      board[rowIndex + 2] == player &&
-      board[rowIndex + 3] == player
-    ) {
-      return [i + 1, 2];
-    }
-    if (
-      board[rowIndex] == 0 &&
-      board[rowIndex + 1] == player &&
-      board[rowIndex + 2] == player &&
-      board[rowIndex + 3] == player
-    ) {
-      return [i + 1, 1];
-    }
-  }
-
-  // Check the user's winning move in vertical columns
-  for (let i = 0; i < 4; i++) {
-    const colIndex = i;
-
-    if (
-      board[colIndex] == player &&
-      board[colIndex + 4] == player &&
-      board[colIndex + 8] == player &&
-      board[colIndex + 12] == 0
-    ) {
-      return [4, i + 1];
-    }
-    if (
-      board[colIndex] == player &&
-      board[colIndex + 4] == player &&
-      board[colIndex + 8] == 0 &&
-      board[colIndex + 12] == player
-    ) {
-      return [3, i + 1];
-    }
-    if (
-      board[colIndex] == player &&
-      board[colIndex + 4] == 0 &&
-      board[colIndex + 8] == player &&
-      board[colIndex + 12] == player
-    ) {
-      return [2, i + 1];
-    }
-    if (
-      board[colIndex] == 0 &&
-      board[colIndex + 4] == player &&
-      board[colIndex + 8] == player &&
-      board[colIndex + 12] == player
-    ) {
-      return [1, i + 1];
-    }
-  }
-
-  // Check the user's winning move in diagonal
-
-  // Diagonal From Left top to right bottom
-  if (
-    board[0] == player &&
-    board[5] == player &&
-    board[10] == player &&
-    board[15] == 0
-  ) {
-    return [4, 4]; // return user's winning row and column
-  }
-
-  if (
-    board[0] == player &&
-    board[5] == player &&
-    board[10] == 0 &&
-    board[15] == player
-  ) {
-    return [3, 3]; // return user's winning row and column
-  }
-
-  if (
-    board[0] == player &&
-    board[5] == 0 &&
-    board[10] == player &&
-    board[15] == player
-  ) {
-    return [2, 2]; // return user's winning row and column
-  }
-
-  if (
-    board[0] == 0 &&
-    board[5] == player &&
-    board[10] == player &&
-    board[15] == player
-  ) {
-    return [1, 1]; // return user's winning row and column
-  }
-
-  // Diagonal From Right top to left bottom
-  if (
-    board[3] == player &&
-    board[6] == player &&
-    board[9] == player &&
-    board[12] == 0
-  ) {
-    return [4, 1]; // return user's winning row and column
-  }
-
-  if (
-    board[3] == player &&
-    board[6] == player &&
-    board[9] == 0 &&
-    board[12] == player
-  ) {
-    return [3, 2]; // return user's winning row and column
-  }
-
-  if (
-    board[3] == player &&
-    board[6] == 0 &&
-    board[9] == player &&
-    board[12] == player
-  ) {
-    return [2, 3]; // return user's winning row and column
-  }
-
-  if (
-    board[3] == 0 &&
-    board[6] == player &&
-    board[9] == player &&
-    board[12] == player
-  ) {
-    return [1, 4]; // return user's winning row and column
-  }
-
-  // Return something in case there is no winning move
-  return null;
-}
-
-// Check the winning move by bot and place that move
-function checkBotWinMove(player) {
-  // Every cell value of r1
-  const r1_0 = r1[0];
-  const r1_1 = r1[1];
-  const r1_2 = r1[2];
-  const r1_3 = r1[3];
-
-  // Every cell value of r2
-  const r2_0 = r2[0];
-  const r2_1 = r2[1];
-  const r2_2 = r2[2];
-  const r2_3 = r2[3];
-
-  // Every cell value of r3
-  const r3_0 = r3[0];
-  const r3_1 = r3[1];
-  const r3_2 = r3[2];
-  const r3_3 = r3[3];
-
-  // Every cell value of r4
-  const r4_0 = r4[0];
-  const r4_1 = r4[1];
-  const r4_2 = r4[2];
-  const r4_3 = r4[3];
-
-  // where each group of 4 elements represents a row.
-  const board = [
-    // r1
-    r1_0,
-    r1_1,
-    r1_2,
-    r1_3,
-
-    // r2
-    r2_0,
-    r2_1,
-    r2_2,
-    r2_3,
-
-    // r3
-    r3_0,
-    r3_1,
-    r3_2,
-    r3_3,
-
-    // r4
-    r4_0,
-    r4_1,
-    r4_2,
-    r4_3,
-  ];
+  const board = [].concat(r1).concat(r2).concat(r3).concat(r4);
 
   // Check the user's winning move in horizontal rows
   for (let i = 0; i < 4; i++) {
@@ -596,7 +384,6 @@ function checkWinner() {
 }
 
 // Check the vertically winning case
-
 function verticalWin(player) {
   for (let i = 0; i < 4; i++) {
     if (
@@ -613,20 +400,35 @@ function verticalWin(player) {
 // Check the horizontally winning case
 
 function horizontalWin(player) {
-  const rows = [r1, r2, r3, r4];
-
-  for (let i = 0; i < rows.length; i++) {
+  const board = [].concat(r1, r2, r3, r4);
+  // Check each row for a winning combination
+  // if (
+  //   (r1[0] == player &&
+  //     r1[1] == player &&
+  //     r1[2] == player &&
+  //     r1[3] == player) ||
+  //   (r2[0] == player &&
+  //     r2[1] == player &&
+  //     r2[2] == player &&
+  //     r2[3] == player) ||
+  //   (r3[0] == player &&
+  //     r3[1] == player &&
+  //     r3[2] == player &&
+  //     r3[3] == player) ||
+  //   (r4[0] == player && r4[1] == player && r4[2] == player && r4[3] == player)
+  // ) {
+  //   return true;
+  // }
+  for (let i = 0; i < board.length; i += 4) {
     if (
-      rows[i][0] == player &&
-      rows[i][1] == player &&
-      rows[i][2] == player &&
-      rows[i][3] == player
+      board[i] === player &&
+      board[i + 1] === player &&
+      board[i + 2] === player &&
+      board[i + 3] === player
     ) {
       return true;
     }
   }
-
-  return false;
 }
 
 // Check the diagonally winning case
@@ -654,26 +456,30 @@ function diagonalWin(player) {
 }
 
 function checkDraw() {
-  for (let i = 0; i < r1.length; i++) {
-    if (r1[i] == 0) {
-      return false;
-    }
-  }
-
-  for (let i = 0; i < r2.length; i++) {
-    if (r2[i] == 0) {
-      return false;
-    }
-  }
-
-  for (let i = 0; i < r3.length; i++) {
-    if (r3[i] == 0) {
-      return false;
-    }
-  }
-
-  for (let i = 0; i < r4.length; i++) {
-    if (r4[i] == 0) {
+  // for (let i = 0; i < r1.length; i++) {
+  //   if (r1[i] == 0) {
+  //     return false;
+  //   }
+  // }
+  // for (let i = 0; i < r2.length; i++) {
+  //   if (r2[i] == 0) {
+  //     return false;
+  //   }
+  // }
+  // for (let i = 0; i < r3.length; i++) {
+  //   if (r3[i] == 0) {
+  //     return false;
+  //   }
+  // }
+  // for (let i = 0; i < r4.length; i++) {
+  //   if (r4[i] == 0) {
+  //     return false;
+  //   }
+  // }
+  // return true;
+  const board = [].concat(r1, r2, r3, r4);
+  for (let i = 0; i < board.length; i++) {
+    if (board[i] === 0) {
       return false;
     }
   }
