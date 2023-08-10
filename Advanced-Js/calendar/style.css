@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  font-family: serif;
+}
+
+body {
+  background-color: thistle;
+}
+
+.title {
+  text-align: center;
+  margin-top: 0.5rem;
+  color: lightcoral;
+  padding: 1rem;
+}
+
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.week {
+  display: flex;
+}
+
+.offday {
+  color: #fff;
+  background-color: lightcoral !important;
+}
+
+.days,
+.dayname {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin: 0.2em;
+  border-radius: 12px;
+  background-color: #fff;
+}
