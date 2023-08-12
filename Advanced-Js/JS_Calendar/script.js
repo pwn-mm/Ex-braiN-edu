@@ -5,6 +5,8 @@ const month = document.querySelector('.month');
 const todayBtn = document.querySelector('.today-btn');
 const userYear = document.getElementById('year');
 const userMonth = document.getElementById('month');
+const holiday = document.getElementById('holiday');
+const holidayName = document.getElementById('holidayName');
 
 const months = [
   'January',
@@ -31,6 +33,17 @@ let currentMonth = date.getMonth();
 
 // get current year
 let currentYear = date.getFullYear();
+
+// Array to store holiday dates
+// const holidayDates = new Set();
+
+// Object to store holiday dates
+const holidayDates = {};
+const holidayNames = [];
+
+let selectedYear;
+let selectedMonth;
+let selectedDay;
 
 function startCalendar() {
   // Get previous month, current month and next month days
@@ -64,18 +77,38 @@ function startCalendar() {
 
   // current month days
   for (let i = 1; i <= lastDayDate; i++) {
+    const dateId = `${currentYear}-${currentMonth}-${i}`;
+    // const isHoliday = holidayDates.has(dateId);
+    const isHoliday = holidayDates[dateId];
+    // console.log(isHoliday);
+
+    let userHolidayName = '';
+
+    // Find the corresponding holiday name for the current dateId
+    for (let j = 0; j < holidayNames.length; j++) {
+      if (holidayNames[j].dateId == dateId) {
+        userHolidayName = holidayNames[j].name;
+        break;
+      }
+    }
+
     // check if its today then add today class
-    if (
+    if (isHoliday) {
+      days += `<div id=${dateId} class="day red">${i}<span class="name">${userHolidayName}</span></div>`;
+    } else if (
       i === new Date().getDate() &&
       currentMonth === new Date().getMonth() &&
       currentYear === new Date().getFullYear()
     ) {
       // if date month year matches add today
-      days += `<div class="day today">${i}</div>`;
+      days += `<div id=${dateId} class="day today">${i}</div>`;
     } else {
       //else dont add today
-      days += `<div class="day ">${i}</div>`;
+      days += `<div id=${dateId} class="day ">${i}</div>`;
     }
+
+    holiday.value = '';
+    holidayName.value = '';
   }
 
   // next Month days
@@ -126,6 +159,8 @@ todayBtn.addEventListener('click', () => {
 
   userYear.value = '';
   userMonth.value = '';
+  holiday.value = '';
+  holidayName.value = '';
 
   startCalendar();
 });
@@ -161,4 +196,26 @@ function calculate() {
   currentMonth = month;
 
   startCalendar();
+}
+
+function addHoliday() {
+  let holidayDate = new Date(holiday.value);
+  let name = holidayName.value;
+  if (holiday.value && name) {
+    const dateId = `${holidayDate.getFullYear()}-${holidayDate.getMonth()}-${holidayDate.getDate()}`;
+
+    // Add the selected date to the holidayDates set
+    // holidayDates.add(dateId);
+
+    // Add the selected date to the holidayDates object
+    holidayDates[dateId] = true;
+    if (name.length > 12) {
+      name = name.slice(0, 12) + '...';
+    }
+    holidayNames.push({ dateId: dateId, name: name });
+    // Refresh the calendar to apply the holiday style
+    startCalendar();
+  } else {
+    alert('Must enter both date and note!');
+  }
 }
