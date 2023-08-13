@@ -37,8 +37,8 @@ let currentYear = date.getFullYear();
 // Array to store holiday dates
 // const holidayDates = new Set();
 
-// Object to store holiday dates
-const holidayDates = {};
+// Arrays to store holiday dates
+const holidayDates = [];
 const holidayNames = [];
 
 let selectedYear;
@@ -50,15 +50,20 @@ function startCalendar() {
   date.setDate(1);
 
   //First day of current month
-  const firstDay = new Date(currentYear, currentMonth, 1);
+  const firstDay = new Date(currentYear, currentMonth);
+  firstDay.setDate(1);
 
   //Last day of current month
-  const lastDay = new Date(currentYear, currentMonth + 1, 0);
+  const lastDay = new Date(currentYear, currentMonth + 1); // Go to next month
+  lastDay.setDate(0); // Last day of current month
   const lastDayIndex = lastDay.getDay();
   const lastDayDate = lastDay.getDate();
 
   //Last day of last month
-  const prevLastDay = new Date(currentYear, currentMonth, 0);
+  const prevLastDay = new Date(currentYear, currentMonth); // Current month
+  // prevLastDay.setDate(0);
+  prevLastDay.setDate(1); // First day of current month
+  prevLastDay.setHours(-1); // Last day of last month
   const prevLastDayDate = prevLastDay.getDate();
 
   //Calculates the number of days from the next month that need to be displayed
@@ -71,7 +76,12 @@ function startCalendar() {
   let days = '';
 
   // Previous month days
+  // "i" represents the number of days before the first day of the current month
   for (let i = firstDay.getDay(); i > 0; i--) {
+    /**
+     * prevLastDayDate - i
+     * the difference between the date of the last day of the previous month and the current loop index i.
+     */
     days += `<div class="day prev">${prevLastDayDate - i + 1}</div>`;
   }
 
@@ -79,9 +89,8 @@ function startCalendar() {
   for (let i = 1; i <= lastDayDate; i++) {
     const dateId = `${currentYear}-${currentMonth}-${i}`;
     // const isHoliday = holidayDates.has(dateId);
-    const isHoliday = holidayDates[dateId];
+    const isHoliday = holidayDates.includes(dateId);
     // console.log(isHoliday);
-
     let userHolidayName = '';
 
     // Find the corresponding holiday name for the current dateId
@@ -207,14 +216,21 @@ function addHoliday() {
     // Add the selected date to the holidayDates set
     // holidayDates.add(dateId);
 
-    // Add the selected date to the holidayDates object
-    holidayDates[dateId] = true;
-    if (name.length > 12) {
-      name = name.slice(0, 12) + '...';
+    // if there is no holiday name with this id, add to array
+    if (!holidayDates.includes(dateId)) {
+      holidayDates.push(dateId);
+
+      if (name.length > 12) {
+        name = name.slice(0, 12) + '...';
+      }
+      holidayNames.push({ dateId: dateId, name: name });
+      // Refresh the calendar to apply the holiday style
+      startCalendar();
+    } else {
+      alert('Date is already a holiday.');
+      holiday.value = '';
+      holidayName.value = '';
     }
-    holidayNames.push({ dateId: dateId, name: name });
-    // Refresh the calendar to apply the holiday style
-    startCalendar();
   } else {
     alert('Must enter both date and note!');
   }
