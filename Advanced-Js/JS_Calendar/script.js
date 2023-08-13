@@ -67,7 +67,10 @@ function startCalendar() {
   const prevLastDayDate = prevLastDay.getDate();
 
   //Calculates the number of days from the next month that need to be displayed
+  // ၇ ထဲကနေ နောက်ဆုံးရက်ရှိတဲ့ index ကိုနှုတ် / 0 က စတာမို့လို့ -1 ထပ်နှုတ်
+  // ၃နေရာ ရှိတယ်ဆိုရင် တကယ်ယူမှာက 0 1 2 3 ဆိုတော့ ၄နေရာဖြစ်တယ် အဲ့တာကြောင့် ၁ နှုတ်
   const nextDays = 7 - lastDayIndex - 1;
+  // console.log(nextDays);
 
   // update current year and month in header
   month.innerText = `${months[currentMonth]}   ${currentYear}`;
@@ -76,13 +79,16 @@ function startCalendar() {
   let days = '';
 
   // Previous month days
+
   // "i" represents the number of days before the first day of the current month
   for (let i = firstDay.getDay(); i > 0; i--) {
+    console.log('index', i);
     /**
      * prevLastDayDate - i
      * the difference between the date of the last day of the previous month and the current loop index i.
      */
     days += `<div class="day prev">${prevLastDayDate - i + 1}</div>`;
+    console.log('Prev days', prevLastDayDate - i + 1);
   }
 
   // current month days
@@ -196,8 +202,16 @@ function calculate() {
   var year = userYear.value;
   var month = parseInt(userMonth.value) - 1;
 
-  if (isNaN(month) || month < 0 || month > 11 || isNaN(year)) {
+  if (
+    isNaN(month) ||
+    month < 0 ||
+    month > 11 ||
+    isNaN(year) ||
+    isYearFourDigit(year) == false
+  ) {
     alert('Please enter a valid month (1 - 12) and valid year number.');
+    userYear.value = '';
+    userMonth.value = '';
     return;
   }
 
@@ -205,6 +219,12 @@ function calculate() {
   currentMonth = month;
 
   startCalendar();
+}
+
+// Check if the year is 4 digits or not
+function isYearFourDigit(year) {
+  const yearString = year.toString();
+  return /^\d{4}$/.test(yearString);
 }
 
 function addHoliday() {
