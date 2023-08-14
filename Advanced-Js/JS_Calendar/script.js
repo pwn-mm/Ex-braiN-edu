@@ -82,13 +82,11 @@ function startCalendar() {
 
   // "i" represents the number of days before the first day of the current month
   for (let i = firstDay.getDay(); i > 0; i--) {
-    console.log('index', i);
     /**
      * prevLastDayDate - i
      * the difference between the date of the last day of the previous month and the current loop index i.
      */
     days += `<div class="day prev">${prevLastDayDate - i + 1}</div>`;
-    console.log('Prev days', prevLastDayDate - i + 1);
   }
 
   // current month days
