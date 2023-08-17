@@ -1,0 +1,155 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: var(--primary-bg);
+}
+
+/* Title */
+header {
+  text-align: center;
+  margin: 10px;
+}
+
+header h1 {
+  color: var(--clr-white);
+}
+
+/* Header */
+.details {
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid var(--clr-gray);
+  margin: auto;
+  height: 100px;
+  margin-top: 20px;
+  padding: 0 20px;
+  color: var(--clr-white);
+}
+
+.gameOver {
+  color: var(--clr-white);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 26px;
+}
+
+.details .score,
+.time {
+  font-size: 25px;
+}
+
+.details button {
+  width: 120px;
+  height: 40px;
+  font-size: 20px;
+  color: var(--clr-white);
+  background-color: var(--primary-bg);
+  border: 1px solid #fff;
+  transition: all 0.5s linear;
+}
+
+.details button:hover {
+  transform: scale(1.1);
+  color: var(--primary-bg);
+  background-color: var(--clr-white);
+}
+
+/* Reset button */
+.finalScore {
+  display: none;
+  color: var(--clr-white);
+  font-size: 25px;
+  text-align: center;
+  margin: 20px 0 10px;
+}
+
+/* Cards Container */
+.container {
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 1rem;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Each Cell div */
+.cell div {
+  border: 2px solid var(--primary-bg);
+  box-shadow: 0 3px 5px var(--clr-white);
+  height: 130px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+
+.cell {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Front view */
+.front {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--clr-gray);
+  background-color: var(--clr-white);
+  transform: rotateY(90deg);
+}
+
+.front i {
+  font-size: 60px;
+}
+
+/* Back view */
+.back {
+  background-color: var(--clr-white);
+}
+
+img {
+  height: 100px;
+  width: 100px;
+}
+
+.back i {
+  font-size: 60px;
+}
+
+.flip {
+  transform: rotateY(0deg);
+}
+
+.match {
+  transform: rotateY(0deg);
+}
+
+.show {
+  transform: rotateY(0deg);
+}
+
+@media screen and (min-width: 770px) {
+  .head {
+    max-width: 760px;
+  }
+
+  .container {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  .cell div {
+    height: 170px;
+  }
+}

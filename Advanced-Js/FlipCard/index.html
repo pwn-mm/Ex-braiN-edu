@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+    />
+
+    <!-- Css -->
+    <link rel="stylesheet" href="./css/root.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>FlipCard Game</title>
+
+    <!-- Script -->
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>FlipCard Game</h1>
+    </header>
+    <div id="details" class="details">
+      <div class="score">Score: <span id="score">0</span></div>
+      <button onclick="startGame()">Start</button>
+      <div class="time">Time: <span id="timer">0</span></div>
+    </div>
+
+    <div id="finalScoreContainer" class="finalScore">
+      <div class="score">Your score was: <span id="finalscore">0</span></div>
+    </div>
+    <!-- Cards container -->
+    <div class="container">
+      <div class="cell">
+        <div class="front" data-index="1">
+          <i class="bx bxl-typescript"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="1">
+          <i class="bx bxl-javascript"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="2">
+          <i class="bx bxl-vuejs"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="2">
+          <i class="bx bxl-javascript"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="3">
+          <i class="bx bxl-vuejs"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="3">
+          <i class="bx bxl-java"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="4">
+          <i class="bx bxl-react"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="4">
+          <i class="bx bxl-java"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="5">
+          <i class="bx bxl-react"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="5">
+          <i class="bx bxl-angular"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="6">
+          <i class="bx bxl-typescript"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+      <div class="cell">
+        <div class="front" data-index="6">
+          <i class="bx bxl-angular"></i>
+        </div>
+        <div class="back">
+          <i class="bx bx-question-mark"></i>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

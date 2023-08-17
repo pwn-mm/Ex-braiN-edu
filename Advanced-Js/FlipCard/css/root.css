@@ -1,0 +1,11 @@
+:root {
+  /* Font sizes */
+  --fsize-18: 18px;
+
+  /* Colors */
+  --clr-white: #f2f2f2;
+  --clr-black: #000;
+  --clr-gray: #a6a6a6;
+  --reset-bg: #ff0000;
+  --primary-bg: #008080;
+}
