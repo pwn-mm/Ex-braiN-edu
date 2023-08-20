@@ -55,7 +55,7 @@ header h1 {
   transition: all 0.5s linear;
 }
 
-.details button:hover {
+.details button:not(:disabled):hover {
   transform: scale(1.1);
   color: var(--primary-bg);
   background-color: var(--clr-white);

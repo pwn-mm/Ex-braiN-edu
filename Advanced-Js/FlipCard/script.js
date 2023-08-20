@@ -1,7 +1,7 @@
 const card = document.querySelectorAll('.cell');
 const front = document.querySelectorAll('.front');
 const container = document.querySelector('.container');
-const resetBtn = document.getElementById('resetBtn');
+const startBtn = document.getElementById('startBtn');
 const score = document.getElementById('score');
 const timer = document.getElementById('timer');
 const detailsContainer = document.getElementById('details');
@@ -16,6 +16,7 @@ let countdownInterval;
 function startGame() {
   isGameStart = true;
   if (isGameStart == true) {
+    startBtn.disabled = true;
     startCountdown();
     shuffleCards();
     clickEachCard();
@@ -39,7 +40,7 @@ function startCountdown() {
 // Shuffle cards
 function shuffleCards() {
   card.forEach((c) => {
-    c.style.order = Math.floor(Math.random() * card.length);
+    c.style = Math.floor(Math.random() * card.length);
   });
 }
 
