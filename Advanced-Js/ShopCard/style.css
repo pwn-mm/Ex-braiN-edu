@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Playfair Display', serif; */
+}
+
+#card-data {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 430px;
+  border: 1px solid #000;
+  margin: 30px;
+  padding: 0 20px 20px 20px;
+  box-shadow: 5px 5px 5px gray;
+  border-radius: 20px;
+}
+
+.card .card-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card .details,
+.card .choice {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  /* border: 1px solid red; */
+  padding: 20px;
+}
+
+.card .details {
+  margin-top: 20px;
+}
+
+.card .choice .color {
+  /* border: 3px solid green; */
+  width: 180px;
+}
+
+.gender {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 70px;
+  height: 50px;
+  color: #fff;
+  background-color: #576cbc;
+  border-top-right-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Card details */
+.details .details-title {
+  align-items: start;
+  text-align: start;
+}
+.details .details-title p {
+  margin-top: 5px;
+  font-size: 14px;
+  font-family: 'Playfair Display', serif;
+}
+
+.details .details-btn button {
+  width: 70px;
+  padding: 10px;
+  background-color: #f94a29;
+  color: #fff;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+}
+
+.details .rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.details .rating span {
+  font-size: 20px;
+}
+
+/* Card choices */
+.choice .color {
+  flex-wrap: wrap;
+  text-align: start;
+}
+
+.choice .color button {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background-color: red;
+  border: 1px solid #000;
+  margin-right: 10px;
+}
+
+.choice .size span {
+  margin-right: 10px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+.inactive {
+  opacity: 0.6;
+}
+
+.choice .left-item p {
+  color: #92e3c0;
+}
+
+/* Price section */
+.price {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin-top: 10px;
+  /* border: 1px solid red; */
+  padding: 20px;
+  gap: 20px;
+}
+
+.price p:nth-of-type(1) {
+  text-decoration: line-through;
+}
+
+.price p:nth-of-type(2) {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.price p:nth-of-type(3) {
+  color: #f95436;
+}
+
+@media screen and (max-width: 1400px) {
+  .card {
+    width: 450px;
+  }
+}

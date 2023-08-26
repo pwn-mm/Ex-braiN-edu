@@ -4,11 +4,14 @@ let allexam = [
   [{ classid: 1, rank: 5 }],
   [{ classid: 2, rank: 1 }],
   [{ classid: 2, rank: 6 }],
+  [{ error: 'A', classid: 2, rank: 6 }],
   [{ classid: 3, rank: 1 }],
   [{ classid: 'A', rank: 1 }],
   [{ classid: 'A', rank: 1 }],
   [{ classid: 'a', rank: 1 }],
 ];
+
+let allexam2 = null;
 
 //Expected Output
 [
@@ -53,7 +56,7 @@ let currentClassID = null;
  * @param {*} param is used to accept any kinds of array
  */
 function groupArray(param) {
-  for (let i = 0; i < param.length; i++) {
+  for (let i = 0; i < param?.length; i++) {
     //တစ်ခန်းစီထုတ်ပြီး ထည့်ထား
     let eachExam = param[i][0];
 
@@ -81,4 +84,4 @@ function groupArray(param) {
   console.log(groupedArrayData);
 }
 
-groupArray(allexam);
+groupArray(allexam2);
