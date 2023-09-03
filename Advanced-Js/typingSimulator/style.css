@@ -13,21 +13,8 @@ body {
   background-color: #004134;
 }
 
-/* User Choice Container */
-.user-choice {
-  color: #fff;
-  display: flex;
-  margin: 10px;
-  gap: 5px;
-}
-
-.user-choice button {
-  width: 80px;
-}
-
 /* Result container */
 .result-container {
-  margin-top: 40px;
   width: 70%;
   display: flex;
   justify-content: space-between;

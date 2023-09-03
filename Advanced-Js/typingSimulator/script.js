@@ -31,16 +31,11 @@ let getRandomLetter = () => {
   const minCharCode = 'a'.charCodeAt(0); // Character code of 'a'
   const maxCharCode = 'z'.charCodeAt(0); // Character code of 'z'
   const randomCharCode =
-    Math.floor(Math.random() * (maxCharCode - minCharCode + 1)) + minCharCode;
-  return String.fromCharCode(randomCharCode);
+    Math.floor(Math.random() * (maxCharCode - minCharCode + 1)) + minCharCode; // rd letter ကို 'a' ကနေစဖို့အတွက် minCharCode ပေါင်းပေးရတယ်
+  return String.fromCharCode(randomCharCode); // ထွက်လာတဲ့ rd letter တွေက်ု lowercase string အနေနဲ့ return ပြန်
 };
 
-/**
- * Generate a random word of a specified length
- *
- * @param {*} length User input length
- * @returns string
- */
+// Generate a random word of a specified length
 let generateRandomWord = () => {
   limitNum = 10;
   let word = '';
@@ -51,7 +46,7 @@ let generateRandomWord = () => {
 };
 
 // Generate a random words
-randomWord = generateRandomWord(5);
+randomWord = generateRandomWord();
 
 // const result = Math.random().toString(36).substring(5).replace(/[0-9]/g, '');
 
@@ -62,10 +57,6 @@ randomWord = generateRandomWord(5);
 for (let i = 0; i < ques.length; i++) {
   ques[i].textContent = randomWord[i];
 }
-
-keys.forEach(function (key) {
-  console.log(key.innerHTML);
-});
 
 window.addEventListener('keyup', (e) => {
   if (
@@ -81,9 +72,11 @@ window.addEventListener('keyup', (e) => {
     inputKey.appendChild(span);
     count++;
     if (e.key == randomWord[limitCount]) {
+      // user input ရိုက်တာနဲ့ random value အလုံးနဲ့ တူတိုင်း limitCount တိုးမယ်
       limitCount++;
     }
   }
+  // ၁၀လုံးပြည့်သွားပြီဆိုတာတာနဲ့ တစ်ဖြတ်ပြီးပြီးတော့ မှန်မှား စစ်မယ်
   while (count >= limitNum) {
     isLimit = true;
     if (limitCount == limitNum) {
@@ -102,6 +95,7 @@ window.addEventListener('keyup', (e) => {
   }
 });
 
+// Calculate Word per minute
 function calculateWPM() {
   // Calculate time taken in seconds
   const timeInSeconds = (endTime - startTime) / 1000;
@@ -113,6 +107,7 @@ function calculateWPM() {
   wordPerMinute.innerText = wpm;
 }
 
+// Reset game after one row is completed
 let restartGame = () => {
   isLimit = false;
   limitCount = 0;
