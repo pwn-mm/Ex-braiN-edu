@@ -76,6 +76,7 @@ window.addEventListener('keyup', (e) => {
       limitCount++;
     }
   }
+
   // ၁၀လုံးပြည့်သွားပြီဆိုတာတာနဲ့ တစ်ဖြတ်ပြီးပြီးတော့ မှန်မှား စစ်မယ်
   while (count >= limitNum) {
     isLimit = true;

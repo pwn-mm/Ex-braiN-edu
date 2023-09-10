@@ -1,0 +1,66 @@
+{
+    "body": {
+        "style": "height: 100vh;display: flex;flex-wrap: wrap;justify-content: center;align-items: center;",
+        "child": [
+            {
+                "element": "div",
+                "style": "width: 500px;height: 180px;background-color: teal;border-radius: 12px;display: flex;flex-wrap: wrap;justify-content: space-around;align-items: flex-start;padding: 20px;",
+                "child": [
+                    {
+                        "element": "div",
+                        "style": "width: 30%;",
+                        "child": [
+                            {
+                                "element": "img",
+                                "style": " width: 100%;",
+                                "src": "profile.png"
+                            }
+                        ]
+                    },
+                    {
+                        "element": "div",
+                        "style": "line-height: 40px;",
+                        "child": [
+                            {
+                                "element": "p",
+                                "style": "font-size: x-large;color: white;",
+                                "text": "Name :",
+                                "child": [
+                                    {
+                                        "element": "span",
+                                        "style": "font-size: x-large;color: white;color: wheat;",
+                                        "text": " David"
+                                    }
+                                ]
+                            },
+                            {
+                                "element": "p",
+                                "style": "font-size: x-large;color: white;",
+                                "text": "Position :",
+                                "child": [
+                                    {
+                                        "element": "span",
+                                        "style": "font-size: x-large;color: white;color: wheat;",
+                                        "text": " Programmer"
+                                    }
+                                ]
+                            },
+                            {
+                                "element": "p",
+                                "style": "font-size: x-large;color: white;",
+                                "text": "Salary :",
+                                "child": [
+                                    {
+                                        "element": "span",
+                                        "style": "font-size: x-large;color: white;color: wheat;",
+                                        "text": " $600"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
