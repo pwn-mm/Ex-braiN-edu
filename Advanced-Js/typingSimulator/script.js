@@ -27,35 +27,39 @@ wordPerMinute.innerText = 0;
 
 startTime = Date.now();
 
-let getRandomLetter = () => {
-  const minCharCode = 'a'.charCodeAt(0); // Character code of 'a'
-  const maxCharCode = 'z'.charCodeAt(0); // Character code of 'z'
-  const randomCharCode =
-    Math.floor(Math.random() * (maxCharCode - minCharCode + 1)) + minCharCode; // rd letter ကို 'a' ကနေစဖို့အတွက် minCharCode ပေါင်းပေးရတယ်
-  return String.fromCharCode(randomCharCode); // ထွက်လာတဲ့ rd letter တွေက်ု lowercase string အနေနဲ့ return ပြန်
-};
+programeStart();
 
-// Generate a random word of a specified length
-let generateRandomWord = () => {
-  limitNum = 10;
-  let word = '';
-  for (let i = 0; i < 10; i++) {
-    word += getRandomLetter();
+function programeStart() {
+  let getRandomLetter = () => {
+    const minCharCode = 'a'.charCodeAt(0); // Character code of 'a'
+    const maxCharCode = 'z'.charCodeAt(0); // Character code of 'z'
+    const randomCharCode =
+      Math.floor(Math.random() * (maxCharCode - minCharCode + 1)) + minCharCode; // rd letter ကို 'a' ကနေစဖို့အတွက် minCharCode ပေါင်းပေးရတယ်
+    return String.fromCharCode(randomCharCode); // ထွက်လာတဲ့ rd letter တွေက်ု lowercase string အနေနဲ့ return ပြန်
+  };
+
+  // Generate a random word of a specified length
+  let generateRandomWord = () => {
+    limitNum = 10;
+    let word = '';
+    for (let i = 0; i < 10; i++) {
+      word += getRandomLetter();
+    }
+    return word;
+  };
+
+  // Generate a random words
+  randomWord = generateRandomWord();
+
+  // const result = Math.random().toString(36).substring(5).replace(/[0-9]/g, '');
+
+  /**
+   * Set Random Word to questions
+   * Loop through each span and assign a letter from randomWord
+   */
+  for (let i = 0; i < ques.length; i++) {
+    ques[i].textContent = randomWord[i];
   }
-  return word;
-};
-
-// Generate a random words
-randomWord = generateRandomWord();
-
-// const result = Math.random().toString(36).substring(5).replace(/[0-9]/g, '');
-
-/**
- * Set Random Word to questions
- * Loop through each span and assign a letter from randomWord
- */
-for (let i = 0; i < ques.length; i++) {
-  ques[i].textContent = randomWord[i];
 }
 
 window.addEventListener('keyup', (e) => {
@@ -83,16 +87,13 @@ window.addEventListener('keyup', (e) => {
     if (limitCount == limitNum) {
       correct++;
       correctWord.innerText = correct;
-      endTime = Date.now(); // Record the end time
-      calculateWPM();
-      restartGame();
     } else {
       wrong++;
       wrongWord.innerText = wrong;
-      endTime = Date.now(); // Record the end time
-      calculateWPM();
-      restartGame();
     }
+    endTime = Date.now(); // Record the end time
+    calculateWPM();
+    restartGame();
   }
 });
 
