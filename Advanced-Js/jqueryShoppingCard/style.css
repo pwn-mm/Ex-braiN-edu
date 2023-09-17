@@ -234,6 +234,8 @@
   text-align: left;
   color: cadetblue;
   font-style: italic;
+  display: flex;
+  flex-direction: column;
 }
 
 @media screen and (max-width: 720px) {
