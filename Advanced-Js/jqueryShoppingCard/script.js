@@ -24,11 +24,9 @@ $(document).ready(function () {
 
   // Show card function
   const showCart = () => {
-    // If user selects card, slide it in, slide out if there is not item left in the cart
-    if (!isCartEmpty) {
-      $cart.slideDown(2000);
-      cartOpen = true;
-    }
+    // If user selects card, slide down and show the entire card section
+    cartOpen = true;
+    $cart.slideDown(2000);
   };
 
   // Check if weekend function
@@ -55,6 +53,9 @@ $(document).ready(function () {
       $discountTitle.show();
       $discountPrice.text(totalWithoutDelivery * 0.85 + ' Ks'); // Display the discount amount
       $discountPrice.show();
+    } else {
+      $discountTitle.hide();
+      $discountPrice.hide();
     }
 
     // Add the selected delivery fees to the discounted total
@@ -78,13 +79,17 @@ $(document).ready(function () {
     );
 
     // Check if the item is already selected
-    if (selectedItems.some((item) => item.itemCode === itemCode)) {
+    if (
+      !isCartEmpty &&
+      selectedItems.some((item) => item.itemCode === itemCode)
+    ) {
       // Show an alert if the item has already been selected
       alert('Item has already in the cart!');
       return null;
+    } else {
+      selectedItems.push({ itemCode, selectedItemValue, selectedQuantity: 1 });
     }
 
-    selectedItems.push({ itemCode, selectedItemValue, selectedQuantity: 1 });
     return selectedItemValue;
   };
 
@@ -115,7 +120,8 @@ $(document).ready(function () {
    * @param {*} addr UserInput Address
    */
   const showUserDetails = (name, phone, addr) => {
-    $orderDetails.html(`
+    $orderDetails.html('');
+    $orderDetails.append(`
       <span>Thank you ${name}</span>
       <span>We received your order.</span>
       <span>We will deliver to your place at ${addr}.</span>
@@ -123,6 +129,7 @@ $(document).ready(function () {
         >Before delivery, we will inform to your Phone : ${phone}</span
       >
       `);
+    $orderDetails.show();
   };
 
   // User input ပြင်မယ့် item code နဲ့ ရှိပြီးသားထဲက item code နဲ့တူလားတိုက်စစ် / တူရင် selectedQuantity ကို update လုပ်
@@ -133,7 +140,23 @@ $(document).ready(function () {
     if (updateItem) updateItem.selectedQuantity = quantity;
   };
 
-  // Show the cart when user clicks any card
+  // Function to delete an item from the cart
+  const deleteCartItem = (itemCode) => {
+    selectedItems = selectedItems.filter((item) => item.itemCode !== itemCode);
+    calculateGrandTotalValue();
+
+    // Check if the cart is empty after deletion
+    if (selectedItems.length === 0) {
+      isCartEmpty = true;
+      $cart.slideUp(1500);
+      $userName.val(null);
+      $userPhone.val(null);
+      $userAddr.val(null);
+      $orderDetails.html('');
+      $orderDetails.hide();
+    }
+  };
+
   // Show the cart when user clicks any card
   $products.on('click', '.card', function () {
     showCart();
@@ -141,18 +164,24 @@ $(document).ready(function () {
     var userSelectedItemValue = getUserSelectedCardValues($(this));
 
     if (userSelectedItemValue !== null) {
+      // Get the current itemCode value for user input quantity
+      var currentItemCode = itemCode;
+      console.log(currentItemCode);
+
       // Create and append a new userCalculateItem element
       var newUserItem = $('<div class="userCalculateItem">');
       newUserItem.html(`
       <img src="${$(this).find('img').attr('src')}" alt="shirt" width="70px" />
       <div><p>${itemName}</p><p>${itemCode}</p></div>
       <input type="text" name="item" value="1" />
-      <p><ion-icon name="trash"></ion-icon></p>
+      <button class="deleteItem"><ion-icon name="trash"></ion-icon></button>
     `);
 
-      // Get the current itemCode value for user input quantity
-      var currentItemCode = itemCode;
-      console.log(currentItemCode);
+      // Delete item from the cart when the delete button is clicked
+      newUserItem.on('click', '.deleteItem', function () {
+        deleteCartItem(currentItemCode);
+        newUserItem.remove(); // Remove the item from the cart
+      });
 
       $calculateItem.append(newUserItem);
 

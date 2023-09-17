@@ -156,6 +156,12 @@
   height: 20px;
 }
 
+.userCalculateItem button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+}
+
 .userCalculateItem ion-icon {
   font-size: 25px !important;
 }
